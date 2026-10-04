@@ -1,0 +1,737 @@
+/*-- scss:defaults --*/
+$font-family-sans-serif: 'iA Writer Quattro S', sans-serif;
+$presentation-slide-text-align: left;
+$presentation-h1-font-size: 2.5em;
+$presentation-h2-font-size: 1.8em;
+$body-bg: #1D232B;
+
+/*-- scss:rules --*/
+
+/* Brand fonts load from the Radiant Earth font CDN, per the CNG brand kit.
+   Berkeley Mono is licensed: reference it by URL, never commit the files. */
+@font-face {
+  font-family: 'iA Writer Quattro S';
+  src: url('https://assets.radiant.earth/fonts/iAWriterQuattroS-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'iA Writer Quattro S';
+  src: url('https://assets.radiant.earth/fonts/iAWriterQuattroS-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'iA Writer Quattro S';
+  src: url('https://assets.radiant.earth/fonts/iAWriterQuattroS-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'iA Writer Quattro S';
+  src: url('https://assets.radiant.earth/fonts/iAWriterQuattroS-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Berkeley Mono';
+  src: url('https://assets.radiant.earth/fonts/BerkeleyMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Berkeley Mono';
+  src: url('https://assets.radiant.earth/fonts/BerkeleyMono-Oblique.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Berkeley Mono';
+  src: url('https://assets.radiant.earth/fonts/BerkeleyMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Berkeley Mono';
+  src: url('https://assets.radiant.earth/fonts/BerkeleyMono-Bold-Oblique.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+.reveal {
+  color: #F2F4F6;
+  font-family: 'iA Writer Quattro S', sans-serif;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  color: #F2F4F6;
+  font-family: 'iA Writer Quattro S', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.reveal a {
+  color: #F2F4F6;
+  text-decoration: underline;
+  text-decoration-color: rgba(33, 38, 247, 0.9);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.reveal a:hover {
+  text-decoration-color: #FFD626;
+}
+
+.reveal .progress {
+  height: 4px;
+  color: #418BD9; /* sky blue: Bonus Blue #2126F7 is too dark on #1D232B, and its tints turn lavender */
+  background-color: rgba(65, 139, 217, 0.25);
+}
+
+.reveal .slide-number {
+  color: #F2F4F6;
+  background-color: transparent;
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+}
+
+.reveal .footer {
+  color: rgba(242, 244, 246, 0.4);
+  font-size: 0.5em;
+}
+
+.slide-logo {
+  max-height: 40px !important;
+  opacity: 0.8;
+}
+
+.big-number {
+  font-size: 7rem;
+  color: #FFD626;
+  font-weight: 700;
+  line-height: 1;
+  display: block;
+  text-align: center;
+}
+
+.center-v {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+/* Hide the empty h2 that Quarto generates for title-less slides */
+.reveal .slides section > h2:empty {
+  display: none;
+}
+
+.reveal .muted {
+  color: rgba(242, 244, 246, 0.5) !important;
+  font-size: 0.85em;
+}
+
+.yellow {
+  color: #FFD626;
+}
+
+/* eyebrow: Berkeley Mono label above headings */
+.reveal .eyebrow {
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+  font-size: 0.62em;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #FFD626;
+}
+
+/* inline highlight: Sunshine Yellow */
+.reveal .hl {
+  color: #FFD626;
+}
+
+.formula {
+  font-size: 3.5rem;
+  color: #F2F4F6;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.formula .highlight {
+  color: #FFD626;
+  font-weight: 700;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.icon-row {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 2rem;
+}
+
+/* code / mono */
+.reveal code,
+.reveal pre,
+.reveal .mono {
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+}
+
+.reveal :not(pre) > code {
+  background: rgba(242, 244, 246, 0.1);
+  color: inherit;
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+
+/* Hide RevealJS circular auto-slide indicator */
+.reveal aside.controls,
+.reveal .auto-slide-control {
+  display: none !important;
+}
+
+/* Countdown bar: right-to-left, above the progress bar */
+#slide-countdown {
+  position: fixed;
+  bottom: 7px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  z-index: 40;
+  background-color: rgba(65, 139, 217, 0.25);
+  pointer-events: none;
+}
+
+/* Lift the logo and menu button above the two bars (bottom 11px). The extra
+   .reveal-viewport outranks Quarto's plugin CSS, which loads after this theme. */
+.reveal-viewport .reveal .slide-logo,
+.reveal-viewport .reveal .slide-menu-button {
+  bottom: 16px;
+}
+
+/* Slides with data-state="no-bars" (title, applause) don't auto-advance, so hide
+   both bars there. Reveal puts the current slide's state on .reveal-viewport.
+   !important because Reveal shows the progress bar with an inline display style. */
+.reveal-viewport.no-bars .reveal .progress,
+.reveal-viewport.no-bars #slide-countdown {
+  display: none !important;
+}
+
+#slide-countdown-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-color: #418BD9;
+  transform-origin: right;
+  animation: countdown-rtl 15s linear forwards;
+}
+
+@keyframes countdown-rtl {
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(0); }
+}
+
+/* Slide 11: Sun to Earth. Markup is in index.qmd; the clock is driven from animations.html.
+   Animations are scoped to section.present so they replay on every visit. */
+.reveal svg.photon-trip {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.reveal .photon-trail {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+.reveal .photon-head {
+  stroke-dasharray: 24 2000;
+  stroke-dashoffset: 24;
+  opacity: 0;
+}
+
+.reveal .earth-glow {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.reveal .trip-clock,
+.reveal .trip-caption {
+  position: absolute;
+  left: 300px;
+  right: 0;
+  margin: 0;
+  text-align: center;
+  opacity: 0;
+}
+
+.reveal .trip-clock {
+  top: 290px;
+  color: #FFD626;
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+.reveal .trip-caption {
+  top: 580px;
+}
+
+.reveal .slides section.present .photon-trail {
+  animation: photon-trail 3s linear 1s both;
+}
+
+.reveal .slides section.present .photon-head {
+  animation: photon-head 3s linear 1s both;
+}
+
+.reveal .slides section.present .earth-glow {
+  animation: earth-flash 1.6s ease-out 3.9s both;
+}
+
+.reveal .slides section.present .trip-clock {
+  animation: fade-in 0.4s ease-out 1s both;
+}
+
+.reveal .slides section.present .trip-caption {
+  animation: fade-in 0.8s ease-out 4.4s both;
+}
+
+@keyframes photon-trail {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes photon-head {
+  0%   { stroke-dashoffset: 24; opacity: 1; }
+  97%  { opacity: 1; }
+  100% { stroke-dashoffset: -976; opacity: 0; }
+}
+
+@keyframes earth-flash {
+  0%   { opacity: 0; transform: scale(0.6); }
+  30%  { opacity: 0.9; transform: scale(1); }
+  100% { opacity: 0.45; transform: scale(1); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Timed reveals: set the delay per element with style="--d:1s".
+   Scoped to section.present so they replay on every visit. */
+.reveal .slides section :is(.a-fade, .a-rise) {
+  opacity: 0;
+}
+
+.reveal .slides section.present .a-fade {
+  animation: fade-in 0.8s ease-out var(--d, 0s) both;
+}
+
+.reveal .slides section.present .a-rise {
+  animation: rise-in 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0s) both;
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Draws a stroke with pathLength="1" from start to end */
+@keyframes draw-1 {
+  from { stroke-dashoffset: 1; opacity: 0; }
+  1%   { opacity: 1; }
+  to   { stroke-dashoffset: 0; opacity: 1; }
+}
+
+/* Headline pinned to the top of a slide */
+.reveal .headline {
+  display: block;
+  margin: 0;
+  color: #F2F4F6;
+  font-size: 1.15em;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.reveal .slide-top {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+/* Large statement text; add .hl for the yellow highlight */
+.reveal .statement {
+  display: block;
+  margin: 0;
+  color: #F2F4F6;
+  font-size: 1.9em;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.reveal .statement.hl {
+  color: #FFD626;
+}
+
+.reveal .statement-sub {
+  display: block;
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Slide 1: statements over a photo, with a dark vignette behind the text.
+   The photo is a Reveal background (so it fills the viewport); it's matched by filename. */
+.reveal .backgrounds .slide-background.present[data-background-hash*="pexels-matthew-montrone"] .slide-background-content {
+  animation: kenburns 15s ease-out both;
+}
+
+@keyframes kenburns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.14); }
+}
+
+.reveal .deep-shade {
+  position: absolute;
+  inset: -600px -1200px;
+  background: radial-gradient(ellipse 900px 520px at center, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+.reveal .deep-copy {
+  gap: 0.2rem;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.9), 0 0 4px rgba(0, 0, 0, 0.9);
+}
+
+.reveal .deep-copy p {
+  margin: 0;
+}
+
+/* Slide 12: dependency graph + taxonomy families */
+.reveal .dep-layout {
+  position: absolute;
+  left: 80px;
+  right: 80px;
+  top: 170px;
+  bottom: 90px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.reveal svg.dep-graph {
+  width: 100%;
+  height: auto;
+}
+
+.reveal .dep-labels text {
+  fill: #F2F4F6;
+  font-family: 'iA Writer Quattro S', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.reveal .dep-edge {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.reveal .slides section.present .dep-edge {
+  animation: draw-1 0.5s ease-out var(--d) both;
+}
+
+.reveal ul.families {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.reveal ul.families li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0.35em 0;
+  font-size: 0.72em;
+  line-height: 1.2;
+}
+
+.reveal ul.families li::before {
+  content: "";
+  flex: none;
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 4px;
+  background: var(--c);
+}
+
+.reveal ul.families b {
+  min-width: 1.6em;
+  color: var(--c);
+}
+
+/* Slide 20: the slide 12 dependency graph keeps growing (canvas driven from animations.html) */
+.reveal canvas.grow-network {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1600px;
+  height: 900px;
+}
+
+.reveal .closing-copy {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 80px;
+  text-align: center;
+  text-shadow: 0 0 24px #1D232B, 0 0 8px #1D232B;
+}
+
+.reveal .closing-copy::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: -80px;
+  height: 360px;
+  background: linear-gradient(to top, rgba(29, 35, 43, 0.95) 35%, rgba(29, 35, 43, 0));
+}
+
+.reveal .closing-copy p {
+  margin: 0.15em 0;
+}
+
+/* Applause slide: stick figures clapping. Each forearm swings about its elbow
+   (transform-origin is set inline, in viewBox units); --d staggers the figures. */
+.reveal svg.clappers {
+  width: 1400px;
+  height: auto;
+}
+
+.reveal .clappers .clapper {
+  overflow: visible;
+}
+
+/* view-box here is each figure's own nested <svg>, so the inline origins match at any scale */
+.reveal .clappers .forearm {
+  transform-box: view-box;
+}
+
+.reveal .clappers .spark {
+  opacity: 0;
+}
+
+/* --t is each figure's own tempo (set inline), so the crowd drifts in and out of sync */
+.reveal .slides section.present .clappers .forearm-l {
+  animation: clap-l var(--t, 0.25s) ease-in var(--d) infinite alternate both;
+}
+
+.reveal .slides section.present .clappers .forearm-r {
+  animation: clap-r var(--t, 0.25s) ease-in var(--d) infinite alternate both;
+}
+
+.reveal .slides section.present .clappers .spark {
+  animation: clap-spark var(--t, 0.25s) ease-in var(--d) infinite alternate both;
+}
+
+@keyframes clap-l {
+  from { transform: rotate(-35deg); }
+  to   { transform: rotate(0deg); }
+}
+
+@keyframes clap-r {
+  from { transform: rotate(35deg); }
+  to   { transform: rotate(0deg); }
+}
+
+/* Slide 13: cartwheels. Each figure crosses from --x0 to --x1 while spinning by
+   --spin, both over --cw, so it rolls like a wheel. Negative delays (--cd) put
+   everyone mid-trip when the slide opens. */
+.reveal svg.cartwheels {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.reveal .cartwheels .cw-spin {
+  transform-box: view-box;
+  transform-origin: 0 0;  /* the figure's centre, in its own coordinates */
+}
+
+.reveal .slides section.present .cartwheels .cw-move {
+  animation: cw-move var(--cw) linear var(--cd) infinite both;
+}
+
+.reveal .slides section.present .cartwheels .cw-spin {
+  animation: cw-spin var(--cw) linear var(--cd) infinite both;
+}
+
+@keyframes cw-move {
+  from { transform: translateX(var(--x0)); }
+  to   { transform: translateX(var(--x1)); }
+}
+
+@keyframes cw-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(var(--spin)); }
+}
+
+/* Milling about: each person sways by (--dx, --dy) and back on their own slow
+   loop --dp, starting partway through (negative delay --dd) so nobody starts in step. */
+.reveal .slides section.present .clappers .drift {
+  animation: crowd-drift var(--dp, 4s) ease-in-out var(--dd, 0s) infinite alternate both;
+}
+
+@keyframes crowd-drift {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(var(--dx), var(--dy)); }
+}
+
+/* High-fives: four random pairs, each with its own start time --hf, length --hfd
+   and walk distance --w (all set inline). Each runs once per visit: step in, raise the facing arm,
+   slap, lower it, step back. The facing clap arm hides while the raised arm shows. */
+.reveal .clappers :is(.hf-arm, .hf-spark) {
+  opacity: 0;
+}
+
+.reveal .clappers .hf-arm {
+  transform-box: view-box;
+}
+
+.reveal .slides section.present .clappers .walker {
+  animation: hf-walk var(--hfd, 1.6s) ease-in-out var(--hf) both;
+}
+
+.reveal .slides section.present .clappers .hf-hide {
+  animation: hf-hide var(--hfd, 1.6s) linear var(--hf) both;
+}
+
+.reveal .slides section.present .clappers .hf-arm-r {
+  animation: hf-raise-r var(--hfd, 1.6s) ease-in-out var(--hf) both;
+}
+
+.reveal .slides section.present .clappers .hf-arm-l {
+  animation: hf-raise-l var(--hfd, 1.6s) ease-in-out var(--hf) both;
+}
+
+.reveal .slides section.present .clappers .hf-spark {
+  animation: hf-spark var(--hfd, 1.6s) ease-out var(--hf) both;
+}
+
+@keyframes hf-walk {
+  0%, 100% { transform: translateX(0); }
+  25%, 70% { transform: translateX(var(--w)); }
+}
+
+@keyframes hf-hide {
+  0%, 12%  { opacity: 1; }
+  13%, 80% { opacity: 0; }
+  81%, 100% { opacity: 1; }
+}
+
+/* Starts at 48deg (matching the lowered upper arm), swings up to -40deg to slap */
+@keyframes hf-raise-r {
+  0%, 12%  { opacity: 0; transform: rotate(48deg); }
+  13%      { opacity: 1; transform: rotate(48deg); }
+  35%, 50% { opacity: 1; transform: rotate(-40deg); }
+  78%      { opacity: 1; transform: rotate(48deg); }
+  80%, 100% { opacity: 0; transform: rotate(48deg); }
+}
+
+@keyframes hf-raise-l {
+  0%, 12%  { opacity: 0; transform: rotate(-48deg); }
+  13%      { opacity: 1; transform: rotate(-48deg); }
+  35%, 50% { opacity: 1; transform: rotate(40deg); }
+  78%      { opacity: 1; transform: rotate(-48deg); }
+  80%, 100% { opacity: 0; transform: rotate(-48deg); }
+}
+
+@keyframes hf-spark {
+  0%, 34%  { opacity: 0; }
+  37%      { opacity: 1; }
+  55%, 100% { opacity: 0; }
+}
+
+.reveal .applause-label {
+  margin: 0;
+  color: rgba(242, 244, 246, 0.7);
+  font-size: 1em;
+  font-style: italic;
+}
+
+@keyframes clap-spark {
+  0%, 70% { opacity: 0; }
+  100%    { opacity: 1; }
+}
+
+/* howto: sticky-note instructions for template users — delete the ::: {.howto} block when done */
+.reveal .howto {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  max-width: 28%;
+  padding: 0.6em 0.9em;
+  font-size: 0.45em;
+  text-align: left;
+  color: #1D232B;
+  background: #FFD626;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  z-index: 10;
+}
+
+/* ::: {.howto .bottom} — bottom-center instead of top-right */
+.reveal .howto.bottom {
+  top: auto;
+  right: auto;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 50%;
+}
+
+/* The title slide is vertically centered, so a corner box would cover the title; sit below the author instead */
+.reveal .quarto-title-block .howto {
+  position: static;
+  max-width: 40%;
+  margin: 2rem auto 0;
+}
+
+/* Uncomment to hide every instruction box at once: */
+/* .reveal .howto { display: none; } */
