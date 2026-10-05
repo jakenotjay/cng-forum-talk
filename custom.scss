@@ -797,10 +797,20 @@ $body-bg: #FFFFFF;
 
 /* Title slide */
 #title-slide { color: #fff; text-align: left; }
+#title-slide::before {
+  content: ''; position: absolute; inset: -60px -400px -60px -400px; z-index: -1;
+  background: linear-gradient(90deg, rgba(10,22,40,0.85) 0%, rgba(10,22,40,0.55) 45%, rgba(10,22,40,0) 75%);
+}
 #title-slide .title { color: #fff; font-size: 2.6em; font-weight: 600; max-width: 75%; text-shadow: 0 2px 24px rgba(0,0,0,0.6); }
 #title-slide .subtitle, #title-slide .author { color: rgba(255,255,255,0.9); }
 #title-slide .quarto-title-author-name { color: #fff; }
 .epoch-logo-corner { position: absolute; right: 40px; bottom: 30px; height: 70px; }
+.reveal #title-slide img.epoch-logo-title {
+  position: absolute; left: 0; bottom: 0; height: 64px; width: auto;
+  margin: 0; border: 0; box-shadow: none; background: none;
+}
+#title-slide .subtitle { font-size: 1.1em; max-width: 70%; margin-top: 0.4em; }
+#title-slide .quarto-title-authors { margin-top: 1.4em; }
 
 /* Retint template classes built for the dark #1D232B ground (yellow/off-white) */
 .reveal .yellow, .reveal .formula .highlight, .reveal .headline,

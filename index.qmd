@@ -1,7 +1,9 @@
 ---
 title: "From days to minutes"
 subtitle: "A just-in-time pipeline for plot-level supply-chain analytics"
-author: "Jake Wilkins · Epoch"
+author: "Jake Wilkins"
+resources:
+  - images/epoch-logo-white.png
 format:
   revealjs:
     theme: [default, custom.scss]
@@ -16,24 +18,33 @@ format:
     width: 1600
     height: 900
     chalkboard: false
-    include-after-body: animations.html
+    include-after-body:
+      - animations.html
+      - text: |
+          <script>
+            // Epoch logo on the title slide (Quarto has no title-slide image option)
+            document.addEventListener('DOMContentLoaded', () => {
+              const t = document.getElementById('title-slide');
+              if (!t) return;
+              const img = document.createElement('img');
+              img.src = 'images/epoch-logo-white.png';
+              img.alt = 'Epoch';
+              img.className = 'epoch-logo-title';
+              t.appendChild(img);
+            });
+          </script>
     include-in-header:
       text: |
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 title-slide-attributes:
-  data-background-image: images/epoch-title-bg.png
+  data-background-image: images/epoch-title-bg.jpg
   data-background-size: cover
   data-autoslide: "0"
   data-state: no-bars
 ---
 
-::: {#title-howto .howto}
-**Edit me:** set `title`, `subtitle`, and `author` at the top of `index.qmd`. Delete this `.howto` box when you're done.
-
-Note that this slide does not automatically advance... you need to manually advance to the next slide. Subsequent slides will automatically advance.
-:::
 
 ## {#slide-01 background-image="images/pexels-matthew-montrone-230847-2395812.jpg" background-size="cover" background-position="center"}
 
