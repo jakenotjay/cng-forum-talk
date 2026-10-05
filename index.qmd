@@ -1,6 +1,5 @@
 ---
-title: "From days to minutes"
-subtitle: "A just-in-time pipeline for plot-level supply-chain analytics"
+title: "From Days to Minutes: A Just-in-Time Pipeline for Plot-Level Supply-Chain Analytics"
 author: "Jake Wilkins"
 resources:
   - images/epoch-logo-white.png
