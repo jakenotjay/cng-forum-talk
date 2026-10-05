@@ -1,9 +1,9 @@
 /*-- scss:defaults --*/
-$font-family-sans-serif: 'iA Writer Quattro S', sans-serif;
+$font-family-sans-serif: 'Google Sans', 'Google Sans Text', system-ui, sans-serif;
 $presentation-slide-text-align: left;
 $presentation-h1-font-size: 2.5em;
 $presentation-h2-font-size: 1.8em;
-$body-bg: #1D232B;
+$body-bg: #FFFFFF;
 
 /*-- scss:rules --*/
 
@@ -735,3 +735,82 @@ $body-bg: #1D232B;
 
 /* Uncomment to hide every instruction box at once: */
 /* .reveal .howto { display: none; } */
+
+/* ===== Epoch theme (matches the CNG London deck) =====
+   White content slides, near-black ink, Epoch blue + green accents,
+   magma satellite imagery for the title. Body text is Google Sans (loaded
+   in index.qmd header); titles are Space Grotesk, bundled locally. */
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('fonts/SpaceGrotesk.ttf') format('truetype');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --epoch-ink: #0A1628;
+  --epoch-muted: #5B6878;
+  --epoch-blue: #376FD0;
+  --epoch-blue-soft: #DCE7FB;
+  --epoch-green: #3FB557;
+  --epoch-green-soft: #57D16F;
+  --epoch-magma: #F2795A;
+  --epoch-plum: #3B0F4F;
+}
+
+.reveal {
+  color: var(--epoch-ink);
+  font-family: 'Google Sans', 'Google Sans Text', system-ui, sans-serif;
+}
+/* Space Grotesk for titles only */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4,
+#title-slide .title {
+  color: var(--epoch-ink);
+  font-family: 'Space Grotesk', 'Google Sans', system-ui, sans-serif;
+}
+.reveal h1, .reveal h2, .reveal h3 { font-weight: 600; letter-spacing: -0.01em; }
+.reveal a { color: var(--epoch-blue); text-decoration-color: var(--epoch-blue); }
+.reveal a:hover { text-decoration-color: var(--epoch-green); }
+.reveal .progress { color: var(--epoch-blue); background-color: var(--epoch-blue-soft); }
+.reveal .slide-number, .reveal .footer { color: var(--epoch-muted); }
+.big-number, .reveal .hl { color: var(--epoch-blue); }
+.reveal .muted { color: var(--epoch-muted); }
+.reveal .accent { color: var(--epoch-blue); }
+.reveal .good { color: var(--epoch-green); }
+
+/* Numbered step badge, as in the London diagrams: [1] The global data cube */
+.step {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.4em; height: 1.4em; margin-right: 0.4em;
+  background: var(--epoch-blue); color: #fff; border-radius: 0.2em;
+  font-weight: 600; font-size: 0.9em;
+}
+
+/* Dark "image" slides: magma satellite background with white type */
+.reveal .slides section.epoch-dark,
+.reveal .slides section.epoch-dark h1,
+.reveal .slides section.epoch-dark h2,
+.reveal .slides section.epoch-dark h3 { color: #fff; }
+.reveal .slides section.epoch-dark .muted { color: rgba(255,255,255,0.75); }
+.reveal .slides section.epoch-dark .hl { color: var(--epoch-magma); }
+
+/* Title slide */
+#title-slide { color: #fff; text-align: left; }
+#title-slide .title { color: #fff; font-size: 2.6em; font-weight: 600; max-width: 75%; text-shadow: 0 2px 24px rgba(0,0,0,0.6); }
+#title-slide .subtitle, #title-slide .author { color: rgba(255,255,255,0.9); }
+#title-slide .quarto-title-author-name { color: #fff; }
+.epoch-logo-corner { position: absolute; right: 40px; bottom: 30px; height: 70px; }
+
+/* Retint template classes built for the dark #1D232B ground (yellow/off-white) */
+.reveal .yellow, .reveal .formula .highlight, .reveal .headline,
+.reveal .statement.hl, .reveal .hl { color: var(--epoch-blue); }
+.reveal .formula, .reveal .mono, .reveal .statement { color: var(--epoch-ink); }
+.reveal .muted { color: var(--epoch-muted); }
+.reveal .applause-label { color: var(--epoch-muted); }
+.reveal .dep-labels text { fill: var(--epoch-ink); }
+.reveal .trip-clock { background: var(--epoch-blue-soft); }
+/* Over imagery (template .deep-copy, our .epoch-dark) keep white type */
+.reveal .deep-copy .statement, .reveal .deep-copy .statement-sub,
+.reveal .epoch-dark .statement { color: #fff; }
+.reveal .deep-copy .statement.hl, .reveal .epoch-dark .statement.hl { color: var(--epoch-green-soft); }
