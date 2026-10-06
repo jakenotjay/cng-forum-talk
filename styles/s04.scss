@@ -1,0 +1,105 @@
+/*-- scss:rules --*/
+/* Slide 4 (trace): classes prefixed .s04-. SVG from scripts/gen_s04_trace.py;
+   per-element delays come in --d (and --g for the green finish, --p for chip pulses). */
+
+.reveal .s04-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 165px;
+}
+.reveal .s04-wrap svg { width: 100%; height: auto; display: block; overflow: visible; }
+
+/* Type */
+.reveal .s04-svg text { font-family: 'Google Sans', 'Google Sans Text', system-ui, sans-serif; }
+.reveal .s04-tier { font-size: 24px; fill: #5B6878; font-weight: 500; letter-spacing: 0.02em; }
+.reveal .s04-tiername { font-size: 32px; fill: #0A1628; font-weight: 500; }
+.reveal .s04-brand-text {
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif !important;
+  font-size: 32px; font-weight: 600; fill: #fff;
+}
+.reveal .s04-src-head { font-size: 24px; fill: #5B6878; font-weight: 500; letter-spacing: 0.02em; }
+.reveal .s04-chip-text { font-size: 28px; font-weight: 500; fill: #376FD0; }
+
+/* Shapes */
+.reveal .s04-brand { fill: #0A1628; }
+.reveal .s04-mid { fill: #DCE7FB; stroke: #376FD0; stroke-width: 3; }
+.reveal .s04-fac { fill: #fff; stroke: #0A1628; stroke-width: 3; stroke-linejoin: round; }
+.reveal .s04-halo { fill: #57D16F; opacity: 0; }
+.reveal .s04-edge {
+  fill: none; stroke: #9AA5B4; stroke-width: 3; stroke-linecap: round;
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+}
+.reveal .s04-dot { fill: #376FD0; opacity: 0; }
+.reveal .s04-chip-bg { fill: #DCE7FB; stroke: #376FD0; stroke-width: 2.5; }
+.reveal .s04-chip-halo { fill: #376FD0; opacity: 0; }
+.reveal .s04-bracket { fill: none; stroke: #376FD0; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.reveal .s04-arrow { fill: #376FD0; }
+/* Dotted continuation (tiers 3 ... N-1) fading in above each facility */
+.reveal .s04-cont {
+  fill: none; stroke: url(#s04-cont-grad); stroke-width: 3.5;
+  stroke-linecap: round; stroke-dasharray: 0.1 11;
+}
+
+/* Initial state (also what a non-present slide shows) */
+.reveal .slides section .s04-pop,
+.reveal .slides section .s04-pop-fade { opacity: 0; }
+.reveal .s04-pop { transform-box: fill-box; transform-origin: center; }
+
+/* Animation, only on the present slide so it replays on every visit */
+.reveal .slides section.present .s04-pop {
+  animation: s04-pop 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.3) var(--d) both;
+}
+.reveal .slides section.present .s04-pop-fade {
+  animation: fade-in 0.6s ease-out var(--d) both;
+}
+.reveal .slides section.present .s04-edge {
+  animation: draw-1 0.6s ease-out var(--d) both,
+             s04-trace 1s ease-out 8.2s both;
+}
+.reveal .slides section.present .s04-dot {
+  animation: s04-fly 0.55s cubic-bezier(0.4, 0, 0.6, 1) var(--d) both;
+}
+.reveal .slides section.present .s04-chip-halo {
+  animation: s04-pulse 0.9s ease-out var(--p) both;
+}
+.reveal .slides section.present .s04-fac {
+  animation: s04-green 0.6s ease-out var(--g) both;
+}
+.reveal .slides section.present .s04-halo {
+  animation: s04-halo 1.2s ease-out var(--g) both;
+}
+.reveal .slides section.present .s04-label-final .s04-tiername {
+  animation: s04-text-green 0.6s ease-out 8.6s both;
+}
+
+@keyframes s04-pop {
+  from { opacity: 0; transform: scale(0.4); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes s04-fly {
+  0%   { opacity: 0; transform: translate(0, 0); }
+  15%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--dx), var(--dy)); }
+}
+/* One chip pulse per solid tier; each halo rect carries its own --p */
+@keyframes s04-pulse {
+  0%   { opacity: 0; }
+  30%  { opacity: 0.35; }
+  100% { opacity: 0; }
+}
+@keyframes s04-trace {
+  to { stroke: #376FD0; }
+}
+@keyframes s04-green {
+  to { fill: #3FB557; stroke: #23863A; }
+}
+@keyframes s04-halo {
+  0%   { opacity: 0; }
+  40%  { opacity: 0.45; }
+  100% { opacity: 0.22; }
+}
+@keyframes s04-text-green {
+  to { fill: #23863A; }
+}

@@ -1,0 +1,35 @@
+## Addresses in, plot-level risk out {#slide-05}
+
+```{=html}
+<div class="s05-flow">
+  <figure class="s05-stage s05-c1 a-rise" style="--d:1s">
+    <div class="card s05-img"><img src="images/gen/s05-stage1.jpg" alt="Customer facility points across Sumatra"><span class="step s05-badge">1</span></div>
+    <figcaption><b>Locations &amp; addresses</b><span>Customer-supplied points</span></figcaption>
+  </figure>
+  <svg class="s05-chev s05-v12 a-fade" style="--d:3.2s" viewBox="0 0 40 44" aria-hidden="true"><path d="M4 2 L38 22 L4 42 Z"/></svg>
+  <figure class="s05-stage s05-c2 a-rise" style="--d:3.5s">
+    <div class="card s05-img"><img src="images/gen/s05-stage2.jpg" alt="Satellite view of a palm oil mill">
+      <div class="s05-inset a-fade" style="--d:4.4s"><img src="images/gen/s05-stage2-inset.jpg" alt="AlphaEarth embedding around the mill"><span>AlphaEarth</span></div>
+      <span class="step s05-badge">2</span></div>
+    <figcaption><b>Geocode &amp; verify</b><span>Real location, real commodity area</span></figcaption>
+  </figure>
+  <svg class="s05-chev s05-v23 a-fade" style="--d:5.7s" viewBox="0 0 40 44" aria-hidden="true"><path d="M4 2 L38 22 L4 42 Z"/></svg>
+  <figure class="s05-stage s05-c3 a-rise" style="--d:6s">
+    <div class="card s05-img"><img src="images/gen/s05-stage3.jpg" alt="Probabilistic supply shed around a mill"><span class="step s05-badge">3</span></div>
+    <figcaption><b>Supply sheds</b><span>Drive-time sourcing regions, one per mill</span></figcaption>
+  </figure>
+  <figure class="s05-stage s05-c4 a-rise" style="--d:8.5s">
+    <div class="card s05-img"><img src="images/gen/s05-stage4.jpg" alt="Delineated commodity plots"><span class="step s05-badge">4</span></div>
+    <figcaption><b>Commodity plots</b><span>Delineated growing areas</span></figcaption>
+  </figure>
+  <svg class="s05-chev s05-v45 a-fade" style="--d:10.7s" viewBox="0 0 40 44" aria-hidden="true"><path d="M4 2 L38 22 L4 42 Z"/></svg>
+  <figure class="s05-stage s05-c5 a-rise" style="--d:11s">
+    <div class="card s05-img"><img src="images/gen/s05-stage5.jpg" alt="Environmental metric raster over a concession"><span class="step s05-badge">5</span></div>
+    <figcaption><b>Environmental metrics</b><span>Deforestation · emissions · biodiversity · water</span></figcaption>
+  </figure>
+</div>
+```
+
+::: notes
+From there it's addresses in and plot-level risk out. We geocode and verify each facility, generate a realistic supply shed from the road network, terrain and land cover, delineate every commodity plot inside it, and then compute environmental metrics for all of them.
+:::

@@ -1,0 +1,146 @@
+/*-- scss:rules --*/
+/* Slide file 21 (AI: the virtualisation meta-skill): classes prefixed .s21- */
+
+.reveal .s21-wrap {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 64px;
+}
+
+/* Left: the skill as a file tree */
+.reveal .s21-tree {
+  flex: 0 0 730px;
+  padding: 30px 34px 28px;
+  box-sizing: border-box;
+}
+.reveal .s21-path {
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+  font-size: 25px;
+  color: var(--epoch-muted);
+  padding-bottom: 16px;
+  margin-bottom: 6px;
+  border-bottom: 2px solid var(--epoch-line);
+}
+.reveal .s21-path b { color: var(--epoch-ink); font-weight: 600; }
+.reveal .s21-row {
+  display: grid;
+  grid-template-columns: 290px 60px 1fr;
+  align-items: baseline;
+  gap: 14px;
+  padding: 24px 0;
+  border-bottom: 1px solid #E6E9EE;
+}
+.reveal .s21-name {
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+  font-size: 25px;
+  color: var(--epoch-ink);
+  white-space: nowrap;
+}
+.reveal .s21-name i { font-style: normal; color: var(--epoch-blue); }
+.reveal .s21-n {
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+  font-size: 24px;
+  color: var(--epoch-blue);
+  text-align: right;
+}
+.reveal .s21-what {
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--epoch-muted);
+}
+.reveal .s21-total {
+  margin-top: 24px;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--epoch-ink);
+}
+
+/* Middle: the agent reads it */
+.reveal .s21-link {
+  flex: 0 0 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.reveal .s21-agent {
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #fff;
+  background: var(--epoch-ink);
+  border-radius: 999px;
+  padding: 4px 16px;
+}
+.reveal .s21-link svg { width: 110px; height: auto; display: block; }
+.reveal .s21-link path { stroke: var(--epoch-ink); stroke-width: 4; fill: none; }
+.reveal .s21-link path.s21-head { fill: var(--epoch-ink); stroke: none; }
+
+/* Right: the skill's own Step 0, as a question ladder */
+.reveal .s21-ladder {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 30px 32px 28px;
+  box-sizing: border-box;
+}
+.reveal .s21-lt {
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif;
+  font-weight: 600;
+  font-size: 33px;
+  padding-bottom: 14px;
+  margin-bottom: 4px;
+  border-bottom: 2px solid var(--epoch-line);
+}
+.reveal .s21-q {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 27px 0;
+  border-bottom: 1px solid #E6E9EE;
+  font-size: 30px;
+}
+.reveal .s21-q .step { font-size: 24px; flex: 0 0 auto; }
+.reveal .s21-qt { flex: 1 1 auto; }
+.reveal .s21-out {
+  flex: 0 0 auto;
+  font-size: 24px;
+  color: var(--epoch-muted);
+  white-space: nowrap;
+}
+.reveal .s21-out .chip {
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  padding: 2px 15px;
+  margin-left: 4px;
+}
+.reveal .s21-out .s21-mirror {
+  font-family: 'Google Sans', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  background: #ECEFF3;
+  color: var(--epoch-ink);
+}
+.reveal .s21-foot {
+  margin-top: 24px;
+  font-size: 26px;
+  color: var(--epoch-muted);
+}
+.reveal .s21-foot code {
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+  color: var(--epoch-blue);
+  font-size: 24px;
+  padding: 0;
+  background: none;
+}
+
+/* The family chips light up together once the ladder is complete */
+.reveal .slides section.present .s21-fam {
+  animation: s21-fam 0.9s ease-out var(--f, 12s) both;
+}
+@keyframes s21-fam {
+  from { background: var(--epoch-blue-soft); color: var(--epoch-blue); box-shadow: 0 0 0 0 rgba(55, 111, 208, 0); }
+  45%  { background: var(--epoch-blue); color: #fff; box-shadow: 0 0 0 7px rgba(55, 111, 208, 0.3); }
+  to   { background: var(--epoch-blue); color: #fff; box-shadow: 0 0 0 0 rgba(55, 111, 208, 0); }
+}

@@ -1,0 +1,13 @@
+## 20+ datasets, virtualised in place {#slide-10}
+
+::: {.s10-wrap}
+{{< include slides/_gen/s10-refs.qmd >}}
+:::
+
+::: {.s10-caption .a-fade style="--d:8.5s"}
+[references live with us]{.s10-ours}; [bytes stay with the provider]{.s10-theirs}
+:::
+
+::: notes
+An intern and I went through the twenty-odd datasets our deforestation pipeline needs and virtualised them in place. The references live in our own bucket on GCS, but the bytes stay wherever the provider put them, on S3, Source Coop and so on.
+:::

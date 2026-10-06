@@ -1,0 +1,44 @@
+/*-- scss:rules --*/
+/* Slide 10 (virtualised): classes prefixed .s10-. SVG from scripts/gen_s1x_diagrams.py. */
+
+.reveal .s10-wrap { position: absolute; left: 0; right: 0; top: 120px; }
+.reveal .s10-wrap svg { width: 100%; height: auto; display: block; overflow: visible; }
+.reveal .s10-svg text { font-family: 'Google Sans', 'Google Sans Text', system-ui, sans-serif; }
+
+.reveal .s10-node { fill: #DCE7FB; stroke: #376FD0; stroke-width: 3; }
+.reveal .s10-node-title {
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif !important;
+  font-size: 36px; font-weight: 600; fill: #0A1628;
+}
+.reveal .s10-node-sub { font-size: 28px; font-weight: 500; fill: #376FD0; }
+.reveal .s10-bucket path, .reveal .s10-bucket ellipse {
+  fill: #fff; stroke: #376FD0; stroke-width: 3; stroke-linejoin: round;
+}
+
+.reveal .s10-cloud-shape { fill: #fff; stroke: #0A1628; stroke-width: 3; stroke-linejoin: round; }
+.reveal .s10-cloud-text { font-size: 28px; font-weight: 500; fill: #0A1628; }
+.reveal .s10-arrow {
+  fill: none; stroke: #376FD0; stroke-width: 3.5; stroke-linecap: round;
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+}
+.reveal .s10-head { fill: #376FD0; }
+
+.reveal .s10-caption {
+  position: absolute; left: 0; right: 0; top: 800px;
+  text-align: center; font-size: 34px; color: #0A1628;
+}
+.reveal .s10-ours { color: #376FD0; font-weight: 500; }
+.reveal .s10-theirs { font-weight: 500; }
+
+/* Initial state: clouds waiting (faint), arrows undrawn */
+.reveal .slides section .s10-cloud { opacity: 0.3; }
+.reveal .slides section .s10-head { opacity: 0; }
+
+.reveal .slides section.present .s10-arrow { animation: draw-1 0.7s ease-in-out var(--d) both; }
+.reveal .slides section.present .s10-head { animation: fade-in 0.15s linear var(--d) both; }
+.reveal .slides section.present .s10-cloud { animation: s10-arrive 0.5s ease-out var(--d) both; }
+
+@keyframes s10-arrive {
+  from { opacity: 0.3; }
+  to   { opacity: 1; }
+}

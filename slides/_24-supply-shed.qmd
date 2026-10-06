@@ -1,0 +1,7 @@
+## Ninety minutes by road from the mill {#slide-24}
+
+{{< include slides/_gen/s24-shed.qmd >}}
+
+::: notes
+For each mill we turn the Overture road network, a global elevation model and land cover into a travel-time surface, and the supply shed is everywhere a truck can reach within ninety minutes, so it follows the roads.
+:::

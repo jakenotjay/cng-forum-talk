@@ -1,0 +1,9 @@
+## Earth Engine spend, month by month {#slide-17}
+
+::: {.s17-wrap}
+{{< include slides/_gen/s17-chart.qmd >}}
+:::
+
+::: notes
+This is our Earth Engine spend by month. The June bump was thumbnails and isochrones, which we've since moved off it, and once the xarray lane took over in July the bill fell to about three per cent of last winter's.
+:::

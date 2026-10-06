@@ -1,0 +1,37 @@
+/*-- scss:rules --*/
+/* Slide 12 (rectilinear): classes prefixed .s12-. Chunk grids from scripts/gen_s1x_diagrams.py;
+   the issue crop from scripts/gen_s12_issue.py. */
+
+.reveal .s12-wrap {
+  position: absolute; left: 0; right: 0; top: 130px; bottom: 40px;
+  display: grid; grid-template-columns: 800px 1fr; gap: 60px; align-items: start;
+}
+.reveal .s12-left { position: relative; }
+.reveal .s12-left svg { width: 100%; height: auto; display: block; overflow: visible; }
+.reveal .s12-svg text { font-family: 'Google Sans', 'Google Sans Text', system-ui, sans-serif; }
+.reveal .s12-credit { font-size: 22px; fill: #5B6878; font-style: italic; }
+
+.reveal .s12-h { font-family: 'Space Grotesk', 'Google Sans', sans-serif !important; font-size: 32px; font-weight: 600; fill: #0A1628; }
+.reveal .s12-code { font-family: 'Berkeley Mono', ui-monospace, monospace !important; font-size: 24px; fill: #376FD0; }
+.reveal .s12-tick { font-size: 22px; fill: #5B6878; }
+.reveal .s12-c1 { fill: #DCE7FB; }
+.reveal .s12-c2 { fill: #B9CEF4; }
+.reveal .s12-c-bad { fill: #F8DCDC; }
+.reveal .s12-px { stroke: #fff; stroke-width: 1.2; opacity: 0.9; }
+.reveal .s12-cb { stroke: #0A1628; stroke-width: 2.5; }
+.reveal .s12-tileb { stroke: #0A1628; stroke-width: 5; }
+.reveal .s12-frame { fill: none; stroke: #0A1628; stroke-width: 3; }
+.reveal .s12-strip-h { font-size: 26px; font-weight: 500; fill: #0A1628; }
+.reveal .s12-num { font-size: 26px; font-weight: 600; fill: #0A1628; }
+.reveal .s12-num-bad { fill: #D64545; }
+.reveal .s12-note { font-size: 24px; font-weight: 500; fill: #D64545; }
+.reveal .s12-note-arrow { stroke: #D64545; stroke-width: 3; stroke-linecap: round; }
+.reveal .s12-c-bad + .s12-num-bad { fill: #D64545; }
+.reveal .s12-svg rect.s12-c-bad { stroke: #D64545; stroke-width: 2.5; }
+
+.reveal .s12-right { margin-top: 6px; }
+.reveal .s12-card { padding: 22px 24px; }
+.reveal .s12-card img.s12-shot, .reveal .s12-card .s12-shot { width: 100%; height: auto; display: block; margin: 0; }
+.reveal .s12-card p { margin: 0; }
+.reveal .s12-sub { display: block; margin-top: 18px; font-size: 26px; line-height: 1.3; color: #5B6878; }
+.reveal .s12-num-ref { color: #D64545; font-weight: 600; }

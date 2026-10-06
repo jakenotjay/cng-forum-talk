@@ -1,0 +1,33 @@
+## A case study: Indonesian palm oil {#slide-03}
+
+<!-- Chart: scripts/gen_s03_chart.py. Bars are DIGITISED from Figure 13 of the pilot study
+     (no per-mill data available locally); totals check against the report to within 0.5%. -->
+
+```{=html}
+<div class="s03">
+  <div class="s03-card card">
+```
+{{< include slides/_gen/s03-chart.qmd >}}
+```{=html}
+  </div>
+  <div class="s03-stats">
+    <div class="s03-stat a-rise" style="--d:6.2s">
+      <span class="s03-num s03-blue">5%</span>
+      <span class="s03-lab">of mills account for</span>
+    </div>
+    <div class="s03-stat a-rise" style="--d:7.4s">
+      <span class="s03-num">73%</span>
+      <span class="s03-lab">of post-2020 deforestation</span>
+    </div>
+    <div class="s03-stat s03-stat-sm a-rise" style="--d:8.8s">
+      <span class="s03-num">78%</span>
+      <span class="s03-lab">of land-use-change emissions</span>
+    </div>
+  </div>
+  <p class="s03-source a-fade" style="--d:0.3s">Source: Codex Planetarius Pilot Study: Palm in Paradise - A Supply Shed Analysis of Indonesian Palm Oil</p>
+</div>
+```
+
+::: notes
+One of the best examples of what that visibility gives you is our report with WWF. For Indonesian palm oil, just 5% of facilities were linked to 73% of post-2020 tropical deforestation, and 78% of land use change emissions.
+:::

@@ -1,0 +1,30 @@
+## One prompt to a registered source {#slide-22}
+
+```{=html}
+<div class="s22-wrap">
+  <div class="s22-prompt a-fade" style="--d:0.2s">
+    <span class="s22-caret">&gt;</span><span class="s22-type">Add a virtual icechunk store for GPW soil organic carbon</span>
+  </div>
+
+  <div class="s22-grid">
+    <div class="card s22-card" style="--d:2s"><div class="s22-h"><span class="step">1</span>Classify</div><div class="s22-f">Family A &middot; 8 global COGs</div><span class="s22-tick" aria-hidden="true"></span></div>
+    <div class="card s22-card" style="--d:3.5s"><div class="s22-h"><span class="step">2</span>Probe one tile</div><div class="s22-f s22-mono">528,004 &times; 1,440,004 uint16</div><span class="s22-tick" aria-hidden="true"></span></div>
+    <div class="card s22-card" style="--d:5s"><div class="s22-h"><span class="step">3</span>Write the source</div><div class="s22-f s22-mono">gpw_soc.py</div><span class="s22-tick" aria-hidden="true"></span></div>
+    <div class="card s22-card" style="--d:6.5s"><div class="s22-h"><span class="step">4</span>Build &amp; verify</div><div class="s22-f">1.45 M refs, sharded &middot; 78 s</div><span class="s22-tick" aria-hidden="true"></span></div>
+    <div class="card s22-card" style="--d:8s"><div class="s22-h"><span class="step">5</span>Register</div><div class="s22-f s22-mono"><span class="s22-s">"gpw_soc"</span>: gpw_soc_source,</div><span class="s22-tick" aria-hidden="true"></span></div>
+    <div class="card s22-card" style="--d:9.5s"><div class="s22-h"><span class="step">6</span>Parity with Earth Engine</div><div class="s22-f">area means within 0.013%</div><span class="s22-tick" aria-hidden="true"></span></div>
+  </div>
+
+  <div class="s22-strip a-rise" style="--d:11s">
+    <span><b>1.5&nbsp;TB</b> of source COGs</span>
+    <span class="s22-arrow">&rarr;</span>
+    <span><b>47&nbsp;MB</b> of references</span>
+    <span class="s22-dot"></span>
+    <span><b class="s22-zero">0</b> bytes copied</span>
+  </div>
+</div>
+```
+
+::: notes
+Here's a real one, soil organic carbon. The agent classified it, probed a tile, wrote the source, registered it and checked it against Earth Engine, turning 1.5 TB of COGs into 47 MB of references. Most new datasets go like this.
+:::

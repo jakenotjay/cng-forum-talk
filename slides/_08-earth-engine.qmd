@@ -1,0 +1,22 @@
+## Earth Engine: 500 requests, 4 facilities {#slide-08}
+
+::: {.s08-top .svg-fill}
+{{< include slides/_gen/pipeline-s08.qmd >}}
+:::
+
+::: s08-main
+::: {.s08-diagram .svg-fill .a-fade style="--d:1s"}
+{{< include slides/_gen/s08-hve.qmd >}}
+:::
+
+::: s08-limits
+- [unexplained costs]{.a-rise style="--d:6s"}
+- [unstable costs]{.a-rise style="--d:8s"}
+- [no visibility into processing]{.a-rise style="--d:10s"}
+- [not enough throughput]{.a-rise style="--d:12s"}
+:::
+:::
+
+::: notes
+The problem was what was filling those arrays: Earth Engine. The high volume endpoint limits you to 500 concurrent requests, which for us meant four facilities at a time, fully saturated, with costs we couldn't really explain or predict.
+:::

@@ -1,0 +1,71 @@
+/*-- scss:rules --*/
+/* Slide 8 (earth-engine): classes prefixed .s08-
+   Top: compact pipeline (slides/_gen/pipeline-s08.qmd), GEE turns red at 0.5 s.
+   Main: HVE pipe feeding four facility lanes, queue grows 1.6-9.6 s
+   (slides/_gen/s08-hve.qmd). Limits list at 6, 8, 10, 12 s. */
+.reveal .slides section#slide-08 .s08-top {
+  position: absolute; left: 0; right: 0; top: 118px;
+}
+.reveal .slides section#slide-08 .s08-main {
+  position: absolute; left: 0; right: 0; top: 388px; bottom: 30px;
+  display: flex; align-items: center; gap: 56px;
+}
+.reveal .slides section#slide-08 .s08-diagram { flex: 0 0 940px; }
+.reveal .slides section#slide-08 .s08-limits { flex: 1 1 auto; }
+
+/* top strip: everything but the source steps back, GEE turns red */
+.reveal .slides section.present .s08-pl :is(.s08-node:not(.s08-src), .s08-arrow, .s08-group, .s08-link:not(.s08-link-src-export)) {
+  animation: s08-dim 0.6s ease 0.5s forwards;
+}
+.reveal .slides section.present .s08-pl .s08-src .s08-box {
+  animation: s08-red-box 0.6s ease 0.5s forwards;
+}
+.reveal .slides section.present .s08-pl .s08-src .s08-label {
+  animation: s08-red-text 0.6s ease 0.5s forwards;
+}
+.reveal .slides section.present .s08-pl .s08-link-src-export {
+  animation: s08-red-link 0.6s ease 0.5s forwards;
+}
+@keyframes s08-dim { from { opacity: 1; } to { opacity: 0.4; } }
+@keyframes s08-red-box {
+  from { fill: #FFFFFF; stroke: #376FD0; stroke-width: 2.5; }
+  to   { fill: #FBE7E7; stroke: #D64545; stroke-width: 4; }
+}
+@keyframes s08-red-text { from { fill: #0A1628; } to { fill: #D64545; } }
+@keyframes s08-red-link {
+  from { stroke: #9AA6B6; stroke-width: 3; }
+  to   { stroke: #D64545; stroke-width: 4; }
+}
+
+/* queue */
+.reveal .slides section .s08-hve :is(.s08-hve-wait, .s08-hve-more, .s08-hve-waitcap) { opacity: 0; }
+.reveal .slides section.present .s08-hve .s08-hve-wait {
+  transform-box: fill-box; transform-origin: center;
+  animation: s08-join 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d) both;
+}
+.reveal .slides section.present .s08-hve .s08-hve-more {
+  animation: s08-fade 0.6s ease var(--d) both;
+}
+.reveal .slides section.present .s08-hve .s08-hve-waitcap {
+  animation: s08-fade 0.6s ease 1.6s both;
+}
+@keyframes s08-join {
+  from { opacity: 0; transform: translateX(26px) scale(0.85); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes s08-fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* limits */
+.reveal .slides section#slide-08 .s08-limits ul {
+  list-style: none; margin: 0; padding: 0;
+}
+.reveal .slides section#slide-08 .s08-limits li {
+  position: relative; margin: 0 0 0.75em; padding-left: 1.15em;
+  font-size: 36px; line-height: 1.2; font-weight: 500; color: var(--epoch-red);
+}
+.reveal .slides section#slide-08 .s08-limits li > span { display: inline-block; position: relative; }
+/* the dot rides on the span so it appears with its line */
+.reveal .slides section#slide-08 .s08-limits li > span::before {
+  content: ""; position: absolute; left: -1.15em; top: 0.38em;
+  width: 0.5em; height: 0.5em; border-radius: 50%; background: var(--epoch-red);
+}

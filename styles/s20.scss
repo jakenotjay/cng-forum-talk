@@ -1,0 +1,68 @@
+/*-- scss:rules --*/
+/* Slide 20 (close): classes prefixed .s20- */
+/* Contact details left, QR to source.coop/epoch right (slides/_gen/s20-qr.qmd from
+   scripts/gen_s20_qr.py). No animation. */
+
+.reveal .s20-layout {
+  position: absolute;
+  left: 0;
+  top: 180px;
+  width: 1600px;
+  height: 620px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 80px;
+}
+.reveal .s20-layout p { margin: 0; }
+
+.reveal .s20-name {
+  display: block;
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif;
+  font-size: 110px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #0A1628;
+}
+
+.reveal .s20-rows {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 32px;
+  row-gap: 14px;
+  margin-top: 48px;
+  align-items: baseline;
+}
+.reveal .s20-rows p { display: contents; }
+.reveal .s20-key { font-size: 32px; color: #5B6878; }
+.reveal .s20-val { font-size: 48px; font-weight: 500; color: #376FD0; }
+
+.reveal .s20-who img.s20-logo {
+  display: block;
+  height: 84px;
+  width: auto;
+  margin: 72px 0 0;
+}
+
+.reveal .s20-qr-card {
+  background: #F4F1EA;
+  border: 2px solid #C9CFD8;
+  border-radius: 24px;
+  padding: 28px 28px 30px;
+  text-align: center;
+}
+.reveal svg.s20-qr { display: block; width: 420px; height: 420px; margin: 0 auto; }
+.reveal .s20-qr-label {
+  display: block;
+  margin-top: 14px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0A1628;
+}
+.reveal .s20-qr-url {
+  display: block;
+  margin-top: 2px;
+  font-size: 30px;
+  color: #376FD0;
+}

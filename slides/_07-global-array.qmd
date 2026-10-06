@@ -1,0 +1,7 @@
+## One global array, filled as we go {#slide-07}
+
+{{< include slides/_gen/s07-array.qmd >}}
+
+::: notes
+If you were at CNG London you might remember this. Every dataset is one global icechunk array, filled incrementally: a new supply shed checks which chunks already exist, fills the missing ones, and commits the data and metaarray in one transaction.
+:::

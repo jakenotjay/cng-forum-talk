@@ -1,0 +1,9 @@
+## We've shifted the bottleneck {#slide-19}
+
+::: {.s19-wrap .svg-fill}
+{{< include slides/_gen/pipeline-s19.qmd >}}
+:::
+
+::: notes
+To be honest, we've mostly shifted the bottleneck. It's now zonal stats and the rest of the pipeline, which we're in the middle of rewriting, and in the near future we want to be providing these analytics in five minutes or less.
+:::

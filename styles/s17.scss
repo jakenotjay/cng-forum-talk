@@ -1,0 +1,74 @@
+/*-- scss:rules --*/
+/* Slide 17 (ee-hours → EE spend): classes prefixed .s17- */
+/* Chart markup: slides/_gen/s17-chart.qmd, from scripts/gen_s17_chart.py.
+   Beats: bars grow in sequence 0.2-4.9 s, June note 6 s, xarray-lane marker 7 s,
+   group averages 8 s, "↓ 97%" 9 s. No money values on screen. */
+
+.reveal .s17-wrap {
+  position: absolute;
+  left: 0;
+  top: 140px;
+  width: 1600px;
+}
+.reveal svg.s17-chart { display: block; width: 100%; height: auto; overflow: visible; }
+
+.reveal .s17-chart text { font-family: 'Google Sans', system-ui, sans-serif; text-anchor: middle; }
+.reveal .s17-before .s17-bar { fill: #A3ACB8; }
+.reveal .s17-spike .s17-bar { fill: #D3D8DF; stroke: #A3ACB8; stroke-width: 2; stroke-dasharray: 7 6; }
+.reveal .s17-after .s17-bar { fill: #3FB557; }
+.reveal .s17-month { fill: #5B6878; font-size: 28px; font-weight: 500; }
+.reveal .s17-axis { stroke: #0A1628; stroke-width: 2; opacity: 0.5; }
+
+.reveal .s17-chart .s17-note-t { text-anchor: end; fill: #5B6878; font-size: 26px; font-weight: 500; }
+.reveal .s17-leader { stroke: #5B6878; stroke-width: 2; }
+
+.reveal .s17-marker-line { stroke: #376FD0; stroke-width: 3; stroke-dasharray: 8 7; }
+.reveal .s17-chip { fill: #DCE7FB; stroke: #376FD0; stroke-width: 2; }
+.reveal .s17-chart .s17-chip-text { fill: #376FD0; font-size: 26px; font-weight: 700; }
+
+.reveal .s17-avg { stroke-width: 4; stroke-dasharray: 14 8; stroke-linecap: round; }
+.reveal .s17-avg-before { stroke: #0A1628; }
+.reveal .s17-avg-after { stroke: #23863A; }
+.reveal .s17-avg-ghost { stroke: #0A1628; stroke-width: 2; stroke-dasharray: 4 8; opacity: 0.35; }
+.reveal .s17-drop { stroke: #23863A; stroke-width: 6; }
+.reveal .s17-drop-head { fill: #23863A; }
+
+.reveal .s17-chart .s17-big text { text-anchor: end; }
+.reveal .s17-chart .s17-big-num {
+  fill: #23863A;
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif;
+  font-size: 132px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.reveal .s17-big-sub { fill: #0A1628; font-size: 34px; font-weight: 500; }
+.reveal .s17-source { fill: #5B6878; font-size: 23px; }
+
+/* Animation (replays on each visit) */
+.reveal .slides section .s17-bar { transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); }
+.reveal .slides section :is(.s17-note, .s17-marker, .s17-avgs, .s17-big) { opacity: 0; }
+
+.reveal .slides section.present .s17-bar {
+  animation: s17-grow 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d) both;
+}
+.reveal .slides section.present .s17-note {
+  animation: fade-in 0.7s ease-out 6s both;
+}
+.reveal .slides section.present .s17-marker {
+  animation: s17-marker 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 7s both;
+}
+.reveal .slides section.present .s17-avgs {
+  animation: fade-in 0.7s ease-out 8s both;
+}
+.reveal .slides section.present .s17-big {
+  animation: rise-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 9s both;
+}
+
+@keyframes s17-grow {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+@keyframes s17-marker {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}

@@ -1,0 +1,9 @@
+## TRACE: from the brand down to the facility {#slide-04}
+
+::: {.s04-wrap}
+{{< include slides/_gen/s04-trace.qmd >}}
+:::
+
+::: notes
+TRACE does that tracing for them. We start from the CPG company and work our way down the tiers, which can run six or seven deep, aggregating web sources, media and proprietary sources, until we get to the facilities actually sourcing the commodity.
+:::

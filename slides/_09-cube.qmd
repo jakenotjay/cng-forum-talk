@@ -1,0 +1,15 @@
+## The solution: VirtualiZarr {#slide-09}
+
+::: s09-stage
+```{=html}
+<img class="s09-gif" src="images/src/s09-cube.gif" alt="Animation: what is Zarr, a data cube split into chunks">
+```
+
+::: {.s09-pipe .svg-fill}
+{{< include slides/_gen/pipeline-s09.qmd >}}
+:::
+:::
+
+::: notes
+So the solution: the cube! Or more specifically, the virtual cube. With VirtualiZarr we read the source files directly, and the only change is that the references live in our bucket on GCS while the bytes stay wherever the provider put them.
+:::

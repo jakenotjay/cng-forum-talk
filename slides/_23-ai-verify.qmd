@@ -1,0 +1,45 @@
+## Pixel-perfect against Earth Engine {#slide-23}
+
+```{=html}
+<div class="s23-wrap">
+  <div class="s23-row">
+    <figure class="s23-panel a-rise" style="--d:0.5s">
+      <figcaption>Earth Engine</figcaption>
+      <div class="card s23-img"><img src="images/gen/s23-ee.png" alt="JRC TMF deforestation year from the Earth Engine composite"></div>
+    </figure>
+    <div class="s23-op a-fade" style="--d:2.2s">&minus;</div>
+    <figure class="s23-panel a-rise" style="--d:2.5s">
+      <figcaption>Virtual cube</figcaption>
+      <div class="card s23-img"><img src="images/gen/s23-xr.png" alt="The same band from the virtual sources, computed in xarray"></div>
+    </figure>
+    <div class="s23-op a-fade" style="--d:4.7s">=</div>
+    <figure class="s23-panel s23-diff a-rise" style="--d:5s">
+      <figcaption>Difference</figcaption>
+      <div class="card s23-img">
+        <img src="images/gen/s23-diff.png" alt="Difference map: no pixel differs">
+        <div class="s23-scan" aria-hidden="true"></div>
+        <div class="s23-zero">
+          <span class="s23-big">0</span>
+          <span class="s23-sub">pixels differ</span>
+        </div>
+      </div>
+    </figure>
+  </div>
+
+  <div class="s23-meta a-fade" style="--d:3.5s">
+    <div class="s23-legend"><span>2019</span><i style="background:#FEBD82"></i><i style="background:#FC8961"></i><i style="background:#EC5860"></i><i style="background:#C73D73"></i><i style="background:#992D80"></i><i style="background:#6E1E81"></i><i style="background:#440F76"></i><span>2025</span><span class="s23-lg-note">year of deforestation</span></div>
+    <div class="s23-cap">JRC TMF in our EUDR composite &middot; Par&aacute;, Brazil &middot; 8 years &times; 512&nbsp;&times;&nbsp;512&nbsp;px</div>
+  </div>
+
+  <div class="s23-also a-fade" style="--d:9.5s">
+    also pixel-exact at source
+    <span class="chip good">Hansen</span><span class="chip good">JRC GFC</span><span class="chip good">JRC GFT</span><span class="chip good">GLAD GLCLU</span><span class="chip good">FDP</span>
+  </div>
+
+  <div class="s23-take a-rise" style="--d:11.5s">How a team of two moved our deforestation pipeline off Earth Engine</div>
+</div>
+```
+
+::: notes
+And the agent checks its own work: the skill has it test each source against the Earth Engine version, and on this tile in Pará not one pixel differs in eight years. That's how two of us moved the deforestation pipeline off Earth Engine.
+:::

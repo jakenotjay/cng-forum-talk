@@ -1,0 +1,69 @@
+```{=html}
+<svg class="s17-chart" viewBox="0 0 1600 740" role="img" aria-label="Bar chart: Earth Engine spend by month, December 2025 to September 2026, relative heights only. Spike in June from thumbnails and isochrones, since moved off Earth Engine. After the xarray lane in July, August to September average is 97% below December to February.">
+  <g class="s17-avgs">
+    <line class="s17-avg-ghost" x1="454" y1="334.0" x2="1540" y2="334.0"/>
+  </g>
+  <g class="s17-col s17-before" style="--d:0.20s">
+    <path class="s17-bar" d="M40.0,640.0 V383.9 Q40.0,375.9 48.0,375.9 H132.0 Q140.0,375.9 140.0,383.9 V640.0 Z"/>
+    <text class="s17-month" x="90.0" y="684">Dec</text>
+  </g>
+  <g class="s17-col s17-before" style="--d:0.62s">
+    <path class="s17-bar" d="M190.0,640.0 V249.9 Q190.0,241.9 198.0,241.9 H282.0 Q290.0,241.9 290.0,249.9 V640.0 Z"/>
+    <text class="s17-month" x="240.0" y="684">Jan</text>
+  </g>
+  <g class="s17-col s17-before" style="--d:1.04s">
+    <path class="s17-bar" d="M340.0,640.0 V392.1 Q340.0,384.1 348.0,384.1 H432.0 Q440.0,384.1 440.0,392.1 V640.0 Z"/>
+    <text class="s17-month" x="390.0" y="684">Feb</text>
+  </g>
+  <g class="s17-col s17-before" style="--d:1.46s">
+    <path class="s17-bar" d="M490.0,640.0 V603.3 Q490.0,595.3 498.0,595.3 H582.0 Q590.0,595.3 590.0,603.3 V640.0 Z"/>
+    <text class="s17-month" x="540.0" y="684">Mar</text>
+  </g>
+  <g class="s17-col s17-before" style="--d:1.88s">
+    <path class="s17-bar" d="M640.0,640.0 V595.2 Q640.0,587.2 648.0,587.2 H732.0 Q740.0,587.2 740.0,595.2 V640.0 Z"/>
+    <text class="s17-month" x="690.0" y="684">Apr</text>
+  </g>
+  <g class="s17-col s17-before" style="--d:2.30s">
+    <path class="s17-bar" d="M790.0,640.0 V477.4 Q790.0,469.4 798.0,469.4 H882.0 Q890.0,469.4 890.0,477.4 V640.0 Z"/>
+    <text class="s17-month" x="840.0" y="684">May</text>
+  </g>
+  <g class="s17-col s17-spike" style="--d:2.72s">
+    <path class="s17-bar" d="M940.0,640.0 V128.0 Q940.0,120.0 948.0,120.0 H1032.0 Q1040.0,120.0 1040.0,128.0 V640.0 Z"/>
+    <text class="s17-month" x="990.0" y="684">Jun</text>
+  </g>
+  <g class="s17-col s17-after" style="--d:3.14s">
+    <path class="s17-bar" d="M1090.0,640.0 V497.7 Q1090.0,489.7 1098.0,489.7 H1182.0 Q1190.0,489.7 1190.0,497.7 V640.0 Z"/>
+    <text class="s17-month" x="1140.0" y="684">Jul</text>
+  </g>
+  <g class="s17-col s17-after" style="--d:3.56s">
+    <path class="s17-bar" d="M1240.0,640.0 V633.9 Q1240.0,627.8 1246.1,627.8 H1333.9 Q1340.0,627.8 1340.0,633.9 V640.0 Z"/>
+    <text class="s17-month" x="1290.0" y="684">Aug</text>
+  </g>
+  <g class="s17-col s17-after" style="--d:3.98s">
+    <path class="s17-bar" d="M1390.0,640.0 V638.0 Q1390.0,635.9 1392.0,635.9 H1488.0 Q1490.0,635.9 1490.0,638.0 V640.0 Z"/>
+    <text class="s17-month" x="1440.0" y="684">Sep</text>
+  </g>
+  <line class="s17-axis" x1="20" y1="640" x2="1510" y2="640"/>
+  <g class="s17-avgs">
+    <line class="s17-avg s17-avg-before" x1="26" y1="334.0" x2="454" y2="334.0"/>
+    <line class="s17-avg s17-avg-after" x1="1226" y1="631.9" x2="1540" y2="631.9"/>
+    <line class="s17-drop" x1="1540" y1="342.0" x2="1540" y2="605.9"/>
+    <path class="s17-drop-head" d="M1526,601.9 L1554,601.9 L1540,623.9 Z"/>
+  </g>
+  <g class="s17-note" style="--d:6s">
+    <line class="s17-leader" x1="888" y1="142.0" x2="930" y2="142.0"/>
+    <text class="s17-note-t" x="876" y="134.0">thumbnails + isochrones,</text>
+    <text class="s17-note-t" x="876" y="168.0">since moved off EE</text>
+  </g>
+  <g class="s17-marker">
+    <line class="s17-marker-line" x1="1065.0" y1="648" x2="1065.0" y2="414"/>
+    <rect class="s17-chip" x="1065.0" y="414" width="196" height="52" rx="26.0"/>
+    <text class="s17-chip-text" x="1163.0" y="449.0">xarray lane</text>
+  </g>
+  <g class="s17-big">
+    <text class="s17-big-num" x="1548" y="150">↓ 97%</text>
+    <text class="s17-big-sub" x="1548" y="204">Aug–Sep vs Dec–Feb</text>
+    <text class="s17-source" x="1548" y="242">monthly average, prod Cloud Billing</text>
+  </g>
+</svg>
+```

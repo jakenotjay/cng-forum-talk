@@ -1,0 +1,51 @@
+/*-- scss:rules --*/
+/* Slide 19 (bottleneck): classes prefixed .s19-
+   SVG: slides/_gen/pipeline-s19.qmd. The red bottleneck marker sits on export,
+   slides to zonal stats at ~3 s; zonal stats + normalise turn into marching
+   dashed "drafts" with a "rewriting" bracket at ~7 s; the "≤ 5 minutes" target at ~10 s. */
+.reveal .slides section#slide-19 .s19-wrap {
+  position: absolute; left: 0; right: 0; top: 222px;
+}
+
+.reveal .slides section .s19-pl :is(.s19-bneck, .s19-rewrite, .s19-target) { opacity: 0; }
+
+.reveal .slides section.present .s19-pl .s19-bneck {
+  animation:
+    s19-fade 0.5s ease 0.8s forwards,
+    s19-move 1.3s cubic-bezier(0.6, 0, 0.2, 1) 3s both;
+}
+.reveal .slides section.present .s19-pl .s19-rewrite {
+  animation: s19-fade 0.7s ease 7s forwards;
+}
+/* the two boxes being rewritten turn into dashed "drafts" */
+.reveal .slides section .s19-pl :is(.s19-job-zonal, .s19-job-normalise) .s19-box {
+  stroke: rgba(55, 111, 208, 0); stroke-width: 4; stroke-dasharray: 16 10;
+}
+.reveal .slides section.present .s19-pl :is(.s19-job-zonal, .s19-job-normalise) .s19-box {
+  animation:
+    s19-draft 0.8s ease 7s forwards,
+    s19-march 1.3s linear 7s infinite;
+}
+.reveal .slides section.present .s19-pl :is(.s19-job-zonal, .s19-job-normalise) .s19-label {
+  animation: s19-draft-text 0.8s ease 7s forwards;
+}
+.reveal .slides section.present .s19-pl .s19-target {
+  transform-box: fill-box; transform-origin: center;
+  animation: s19-pop 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 10s both;
+}
+
+@keyframes s19-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes s19-move {
+  from { transform: none; }
+  to   { transform: translateX(var(--dx)); }
+}
+@keyframes s19-march { to { stroke-dashoffset: -52; } }
+@keyframes s19-draft {
+  from { fill: #376FD0; stroke: rgba(55, 111, 208, 0); }
+  to   { fill: #E8EFFC; stroke: #376FD0; }
+}
+@keyframes s19-draft-text { from { fill: #FFFFFF; } to { fill: #376FD0; } }
+@keyframes s19-pop {
+  from { opacity: 0; transform: translateY(14px) scale(0.9); }
+  to   { opacity: 1; transform: none; }
+}

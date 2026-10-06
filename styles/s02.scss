@@ -1,0 +1,30 @@
+/*-- scss:rules --*/
+/* Slide 2 (visibility): classes prefixed .s02-. SVG from scripts/gen_s02_funnel.py.
+   Each tier fades in at its --d (about 1.5 s apart); its own opacity is baked into the SVG. */
+
+.reveal .s02-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 200px;
+}
+.reveal .s02-wrap svg { width: 100%; height: auto; display: block; overflow: visible; }
+
+.reveal .s02-band { fill: #DCE7FB; }
+.reveal .s02-edges path { fill: none; stroke: #376FD0; stroke-linecap: round; }
+.reveal .s02-nodes circle { fill: #376FD0; stroke: #F4F1EA; stroke-width: 3; }
+.reveal .s02-name {
+  font-family: 'Google Sans', 'Google Sans Text', system-ui, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  fill: #0A1628;
+}
+
+.reveal .slides section .s02-tier { opacity: 0; }
+.reveal .slides section.present .s02-tier {
+  animation: s02-in 1s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0s) both;
+}
+@keyframes s02-in {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: none; }
+}

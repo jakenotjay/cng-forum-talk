@@ -5,3 +5,6 @@ __pycache__/
 .venv/
 
 **/*.quarto_ipynb
+design/review/
+.render.lock/
+.utah-pre-v1-removal.md

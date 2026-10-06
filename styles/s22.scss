@@ -1,0 +1,134 @@
+/*-- scss:rules --*/
+/* Slide file 22 (AI: one prompt to a registered source): classes prefixed .s22- */
+
+.reveal .s22-wrap { margin-top: 48px; }
+
+/* The prompt, typed in */
+.reveal .s22-prompt {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--epoch-ink);
+  color: #E6EAF0;
+  border-radius: 18px;
+  padding: 24px 32px;
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+  font-size: 30px;
+  box-shadow: 0 10px 30px rgba(10, 22, 40, 0.18);
+}
+.reveal .s22-caret { color: var(--epoch-green-soft); font-weight: 700; }
+.reveal .s22-type {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid transparent;
+  max-width: 0;
+}
+.reveal .slides section.present .s22-type {
+  animation:
+    s22-type 1.5s steps(56, end) 0.4s forwards,
+    s22-cursor 0.6s step-end 0.4s 4;
+}
+@keyframes s22-type { to { max-width: 1300px; } }
+@keyframes s22-cursor { 50% { border-right-color: var(--epoch-green-soft); } }
+
+/* Six lifecycle steps, each with one real fact from PR #3305 */
+.reveal .s22-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+.reveal .s22-card {
+  position: relative;
+  padding: 24px 28px 26px;
+  min-height: 168px;
+  box-sizing: border-box;
+  opacity: 0;
+}
+.reveal .slides section.present .s22-card {
+  animation:
+    rise-in 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d) both,
+    s22-done 0.6s ease-out calc(var(--d) + 0.7s) both;
+}
+@keyframes s22-done {
+  from { border-color: var(--epoch-line); }
+  to   { border-color: var(--epoch-green); }
+}
+.reveal .s22-h {
+  display: flex;
+  align-items: center;
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  color: var(--epoch-ink);
+}
+.reveal .s22-h .step { font-size: 24px; }
+.reveal .s22-f {
+  margin-top: 16px;
+  font-size: 28px;
+  color: var(--epoch-muted);
+  line-height: 1.25;
+}
+.reveal .s22-f.s22-mono {
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+  font-size: 25px;
+  color: var(--epoch-ink);
+}
+.reveal .s22-s { color: var(--epoch-blue); }
+
+/* Green tick, top-right, when the step completes */
+.reveal .s22-tick {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--epoch-green);
+  opacity: 0;
+}
+.reveal .s22-tick::after {
+  content: '';
+  position: absolute;
+  left: 13px;
+  top: 7px;
+  width: 9px;
+  height: 17px;
+  border: solid #fff;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+}
+.reveal .slides section.present .s22-tick {
+  animation: s22-pop 0.5s cubic-bezier(0.3, 1.6, 0.5, 1) calc(var(--d) + 0.7s) both;
+}
+@keyframes s22-pop {
+  from { opacity: 0; transform: scale(0.3); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* The punchline strip */
+.reveal .s22-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 46px;
+  font-size: 32px;
+  color: var(--epoch-muted);
+}
+.reveal .s22-strip b {
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif;
+  font-weight: 700;
+  font-size: 46px;
+  color: var(--epoch-ink);
+}
+.reveal .s22-strip b.s22-zero { color: var(--epoch-green); }
+.reveal .s22-arrow { font-size: 36px; color: var(--epoch-blue); }
+.reveal .s22-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--epoch-line);
+}

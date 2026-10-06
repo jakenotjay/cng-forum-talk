@@ -1,0 +1,67 @@
+/*-- scss:rules --*/
+/* Slide 11 (tiffs): classes prefixed .s11-. Panels from scripts/gen_s1x_diagrams.py. */
+
+.reveal .s11-wrap { position: absolute; left: 0; right: 0; top: 140px; }
+.reveal .s11-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.reveal .s11-panel { padding: 34px 30px 34px; text-align: left; }
+.reveal .s11-artbox svg { width: 100%; height: auto; display: block; overflow: visible; }
+.reveal .s11-art text { font-family: 'Google Sans', 'Google Sans Text', system-ui, sans-serif; }
+.reveal .s11-title {
+  margin-top: 40px;
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif;
+  font-size: 36px; font-weight: 600; line-height: 1.1; color: #0A1628;
+}
+.reveal .s11-sub { margin-top: 8px; font-size: 26px; line-height: 1.25; color: #5B6878; }
+.reveal .s11-chips { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
+.reveal .s11-chips .chip { font-size: 24px; }
+
+/* Shared drawing bits */
+.reveal .s11-lbl { font-size: 24px; font-weight: 500; fill: #5B6878; }
+.reveal .s11-tile { fill: #DCE7FB; stroke: #376FD0; stroke-width: 2.5; stroke-linejoin: round; opacity: 0.95; }
+.reveal .s11-overlap { fill: #D64545; fill-opacity: 0.8; stroke: #D64545; stroke-width: 2; stroke-linejoin: round; }
+.reveal .s11-zone { stroke: #0A1628; stroke-width: 2.5; stroke-dasharray: 8 7; }
+
+.reveal .s11-dim { stroke: #5B6878; stroke-width: 2; }
+.reveal .s11-blk { fill: #DCE7FB; stroke: #fff; stroke-width: 1.5; }
+.reveal .s11-blk2 { fill: #B9CEF4; stroke: #fff; stroke-width: 1.5; }
+.reveal .s11-blk-bad { fill: #F8DCDC; stroke: #D64545; stroke-width: 1.5; }
+.reveal .s11-tile-frame { fill: none; stroke: #0A1628; stroke-width: 3; }
+
+.reveal .s11-file { fill: #fff; stroke: #0A1628; stroke-width: 3; stroke-linejoin: round; }
+.reveal .s11-file-fold { fill: none; stroke: #0A1628; stroke-width: 3; stroke-linejoin: round; }
+.reveal .s11-fname { font-size: 24px; font-weight: 500; fill: #0A1628; }
+.reveal .s11-vpill { fill: #F8DCDC; stroke: #D64545; stroke-width: 2; }
+.reveal .s11-ver { font-size: 24px; font-weight: 700; fill: #D64545; }
+.reveal .s11-redarc { fill: none; stroke: #D64545; stroke-width: 4; stroke-linecap: round; }
+.reveal .s11-redhead { fill: #D64545; }
+.reveal .s11-ref { fill: #DCE7FB; stroke: #376FD0; stroke-width: 3; }
+.reveal .s11-reftext { font-size: 24px; font-weight: 500; fill: #376FD0; }
+.reveal .s11-reflink { fill: none; stroke: #376FD0; stroke-width: 3; }
+.reveal .s11-refhead { fill: #376FD0; }
+.reveal .s11-broken circle { fill: #fff; stroke: #D64545; stroke-width: 3; }
+.reveal .s11-broken path { stroke: #D64545; stroke-width: 4; stroke-linecap: round; }
+.reveal .s11-stale { font-size: 24px; font-weight: 500; fill: #D64545; }
+
+/* Panel 3 story (panel appears at 9 s): v1 -> v2 at 10.2 s -> v3 at 11.4 s,
+   the ref goes stale at 10.4 s. Initial state = before any rewrite. */
+.reveal .slides section .s11-ver2,
+.reveal .slides section .s11-ver3,
+.reveal .slides section .s11-broken,
+.reveal .slides section .s11-stale { opacity: 0; }
+.reveal .s11-spin { transform-box: view-box; }
+
+.reveal .slides section.present .s11-ver1 { animation: s11-out 0.3s ease 10.2s both; }
+.reveal .slides section.present .s11-ver2 { animation: s11-in 0.3s ease 10.2s both, s11-out 0.3s ease 11.4s forwards; }
+.reveal .slides section.present .s11-ver3 { animation: s11-in 0.3s ease 11.4s both; }
+.reveal .slides section.present .s11-spin { animation: s11-spin 0.6s ease-in-out 9.9s both, s11-spin2 0.6s ease-in-out 11.1s forwards; }
+.reveal .slides section.present .s11-broken,
+.reveal .slides section.present .s11-stale { animation: fade-in 0.3s ease-out 10.4s both; }
+.reveal .slides section.present .s11-reflink { animation: s11-dash 0.3s ease-out 10.4s both; }
+.reveal .slides section.present .s11-refhead { animation: s11-dim 0.3s ease-out 10.4s both; }
+
+@keyframes s11-in  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes s11-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes s11-spin  { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes s11-spin2 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes s11-dash { to { stroke: #D64545; stroke-dasharray: 7 7; } }
+@keyframes s11-dim  { to { fill: #D64545; } }

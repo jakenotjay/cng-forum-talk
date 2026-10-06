@@ -1,0 +1,34 @@
+## Epoch open data on Source Coop {#slide-16}
+
+```{=html}
+<div class="s16-wrap">
+  <div class="s16-grid">
+    <div class="s16-ds card a-rise" style="--d:0.4s"><span class="s16-name">JRC GFC 2020</span><span class="s16-desc">forest cover · 10 m</span><span class="s16-size">38.4 GiB <small>1 COG</small></span></div>
+    <div class="s16-ds card a-rise" style="--d:0.7s"><span class="s16-name">JRC GFT 2020</span><span class="s16-desc">forest types · 10 m</span><span class="s16-size">73.8 GiB <small>1 COG</small></span></div>
+    <div class="s16-ds card a-rise" style="--d:1.0s"><span class="s16-name">JRC GSW</span><span class="s16-desc">surface water · monthly 2017–21</span><span class="s16-size">416 GiB <small>30,240 tiles</small></span></div>
+    <div class="s16-ds s16-tmf card a-rise" style="--d:1.3s"><span class="s16-name">JRC TMF</span><span class="s16-desc">tropical moist forest · 1990–2025</span><span class="s16-size">117 GiB <small>3,526 COGs</small></span></div>
+    <div class="s16-ds card a-rise" style="--d:1.6s"><span class="s16-name">ForTy 2020</span><span class="s16-desc">forest typology · 10 m</span><span class="s16-size">310 GiB <small>135,542 COGs</small></span></div>
+    <div class="s16-ds card a-rise" style="--d:1.9s"><span class="s16-name">WRI forest-loss drivers</span><span class="s16-desc">dominant driver · 1 km · 2001–2025</span><span class="s16-size">0.28 GiB <small>1 COG</small></span></div>
+    <div class="s16-ds card a-rise" style="--d:2.2s"><span class="s16-name">Xiao natural &amp; planted forests</span><span class="s16-desc">30 m · about 2020</span><span class="s16-size">8.2 GiB <small>1,010 COGs</small></span></div>
+    <div class="s16-call a-rise" style="--d:8s">
+      <span class="s16-call-k">with TMF on Source Coop</span>
+      <span class="s16-call-t">Computed deforestation in every Indonesian palm oil concession in <b>60&#8202;s</b> on a laptop</span>
+    </div>
+  </div>
+  <div class="s16-side a-fade" style="--d:2.8s">
+    <div class="s16-qr">
+```
+
+{{< include slides/_gen/s16-qr.qmd >}}
+
+```{=html}
+    </div>
+    <div class="s16-url">source.coop/epoch</div>
+    <div class="s16-fmt">COGs + geoparquet index</div>
+  </div>
+</div>
+```
+
+::: notes
+So we mirrored them and made them open on Source Coop, under Epoch's open data programme: seven datasets, as COGs with geoparquet indexes. With TMF there, I computed deforestation in every Indonesian palm oil concession in sixty seconds, on a laptop.
+:::

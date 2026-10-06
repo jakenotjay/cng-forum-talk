@@ -1,0 +1,60 @@
+/*-- scss:rules --*/
+/* Slide 13 (families): classes prefixed .s13-. Panels from scripts/gen_s1x_diagrams.py. */
+
+.reveal .s13-wrap { position: absolute; left: 0; right: 0; top: 128px; }
+.reveal .s13-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.reveal .s13-panel { padding: 28px 30px 30px; text-align: left; display: flex; flex-direction: column; }
+.reveal .s13-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.reveal .s13-badge {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  width: 48px; height: 48px; border-radius: 10px;
+  background: #376FD0; color: #fff;
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif; font-weight: 600; font-size: 30px;
+}
+.reveal .s13-title {
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif;
+  font-size: 32px; font-weight: 600; line-height: 1.1; color: #0A1628; white-space: nowrap;
+}
+.reveal .s13-flow { width: 100%; height: auto; display: block; overflow: visible; }
+.reveal .s13-flow text { font-family: 'Google Sans', 'Google Sans Text', system-ui, sans-serif; }
+.reveal .s13-step { font-size: 27px; font-weight: 500; fill: #0A1628; }
+.reveal .s13-arrow { stroke: #9AA5B4; stroke-width: 3; stroke-linecap: round; }
+.reveal .s13-arrowhead { fill: #9AA5B4; }
+.reveal .s13-chips { margin-top: auto; padding-top: 22px; display: flex; gap: 10px; flex-wrap: wrap; }
+.reveal .s13-chips .chip { font-size: 24px; }
+
+/* Icons */
+.reveal .s13-ic-doc, .reveal .s13-ic-box, .reveal .s13-ic-tile {
+  fill: #fff; stroke: #0A1628; stroke-width: 3; stroke-linejoin: round;
+}
+.reveal .s13-ic-doc-back { fill: #DCE7FB; stroke: #0A1628; stroke-width: 3; stroke-linejoin: round; }
+.reveal .s13-ic-doc-fold, .reveal .s13-ic-doc-back-fold { fill: none; stroke: #0A1628; stroke-width: 3; stroke-linejoin: round; }
+.reveal .s13-ic-ref { stroke: #376FD0; stroke-width: 4; stroke-linecap: round; }
+.reveal .s13-ic-fill { fill: #DCE7FB; stroke: #376FD0; stroke-width: 3; stroke-linejoin: round; }
+.reveal .s13-ic-gridline { stroke: #C9CFD8; stroke-width: 1.5; }
+.reveal .s13-ic-gridline-b { stroke: #376FD0; stroke-width: 1.5; opacity: 0.6; }
+.reveal .s13-ic-sel { fill: #376FD0; fill-opacity: 0.25; stroke: #376FD0; stroke-width: 3; stroke-dasharray: 6 4; }
+.reveal .s13-ic-sel-solid { fill: #376FD0; }
+.reveal .s13-ic-tile-hit { fill: #376FD0; stroke: #376FD0; stroke-width: 3; stroke-linejoin: round; }
+.reveal .s13-ic-seam { stroke: #376FD0; stroke-width: 3; stroke-dasharray: 5 4; }
+.reveal .s13-ic-lens { fill: #fff; stroke: #0A1628; stroke-width: 3.5; }
+.reveal .s13-ic-handle { stroke: #0A1628; stroke-width: 5; stroke-linecap: round; }
+.reveal .s13-ic-bracket { fill: none; stroke: #376FD0; stroke-width: 3; stroke-linejoin: round; }
+
+.reveal .slides section .s13-row { opacity: 0; }
+.reveal .slides section.present .s13-row { animation: fade-in 0.5s ease-out var(--d) both; }
+
+/* Shared final step: three arrows feed one full-width bar (appears ~11 s). */
+.reveal .s13-final { margin-top: 6px; }
+.reveal .s13-downs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; justify-items: center; }
+.reveal .s13-down { width: 26px; height: 30px; display: block; }
+.reveal .s13-down line { stroke: #376FD0; stroke-width: 4; stroke-linecap: round; }
+.reveal .s13-down polygon { fill: #376FD0; }
+.reveal .s13-bar {
+  margin-top: 8px; display: flex; align-items: center; justify-content: center; gap: 20px;
+  padding: 12px 28px; border-radius: 14px; background: #376FD0; color: #fff;
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif; font-size: 34px; font-weight: 600; line-height: 1.1;
+}
+.reveal .s13-geobox { width: 44px; height: 44px; flex: none; }
+.reveal .s13-geobox rect { fill: none; stroke: #fff; stroke-width: 3.5; }
+.reveal .s13-geobox line { stroke: #fff; stroke-width: 2; opacity: 0.7; }

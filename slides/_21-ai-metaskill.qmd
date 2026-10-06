@@ -1,0 +1,33 @@
+## A skill, not a script {#slide-21}
+
+```{=html}
+<div class="s21-wrap">
+  <div class="card s21-tree">
+    <div class="s21-path a-fade" style="--d:0.3s">.claude/skills/<b>virtual-icechunk</b>/</div>
+    <div class="s21-row a-rise" style="--d:0.8s"><span class="s21-name">SKILL.md</span><span class="s21-n">117</span><span class="s21-what">classify, lifecycle, rules</span></div>
+    <div class="s21-row a-rise" style="--d:1.5s"><span class="s21-name">families/<i>a b c</i></span><span class="s21-n">210</span><span class="s21-what">how to build each family</span></div>
+    <div class="s21-row a-rise" style="--d:2.2s"><span class="s21-name">reference/</span><span class="s21-n">216</span><span class="s21-what">protocol, auth, register</span></div>
+    <div class="s21-row a-rise" style="--d:2.9s"><span class="s21-name">troubleshooting.md</span><span class="s21-n">85</span><span class="s21-what">symptom &rarr; cause &rarr; fix</span></div>
+    <div class="s21-row a-rise" style="--d:3.6s"><span class="s21-name">UPDATE.md</span><span class="s21-n">49</span><span class="s21-what">version pins</span></div>
+    <div class="s21-total a-fade" style="--d:4.3s">9 files &middot; 677 lines of hard-won judgement</div>
+  </div>
+
+  <div class="s21-link a-fade" style="--d:5s" aria-hidden="true">
+    <span class="s21-agent">agent</span>
+    <svg viewBox="0 0 120 40"><path d="M4 20 H104" /><path d="M96 8 L114 20 L96 32 Z" class="s21-head"/></svg>
+  </div>
+
+  <div class="card s21-ladder">
+    <div class="s21-lt a-fade" style="--d:5.2s">Step&nbsp;0: classify, before any code</div>
+    <div class="s21-q a-rise" style="--d:6s"><span class="step">1</span><span class="s21-qt">Bytes range-readable?</span><span class="s21-out">no &rarr; <b class="chip s21-mirror">mirror</b></span></div>
+    <div class="s21-q a-rise" style="--d:7.5s"><span class="step">2</span><span class="s21-qt">Requester-pays or auth?</span><span class="s21-out">yes &rarr; <b class="chip s21-fam s21-c" style="--f:12s">C</b></span></div>
+    <div class="s21-q a-rise" style="--d:9s"><span class="step">3</span><span class="s21-qt">Overwritten in place?</span><span class="s21-out">yes &rarr; <b class="chip s21-fam s21-c" style="--f:12s">C</b></span></div>
+    <div class="s21-q a-rise" style="--d:10.5s"><span class="step">4</span><span class="s21-qt">Splices into one grid?</span><span class="s21-out">yes <b class="chip s21-fam" style="--f:11.6s">A</b> no <b class="chip s21-fam" style="--f:11.8s">B</b></span></div>
+    <div class="s21-foot a-fade" style="--d:12.2s">then one module, one <code>open()</code>, one registry entry</div>
+  </div>
+</div>
+```
+
+::: notes
+What let so few of us do this is a skill. Everything we learned the hard way about families, hosting and failure modes lives in the repo as guidance, so the agent classifies a dataset before writing any code.
+:::

@@ -1,0 +1,145 @@
+/*-- scss:rules --*/
+/* Slide 15 (wont-play): classes prefixed .s15- */
+
+.reveal .s15-wrap {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+/* Browser-frame card around the real page capture */
+.reveal .s15-browser {
+  flex: 0 0 980px;
+  border-radius: 16px;
+}
+.reveal .s15-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 50px;
+  padding: 0 18px;
+  background: #ECEEF2;
+  border-bottom: 1px solid var(--epoch-line);
+}
+.reveal .s15-dots { display: flex; gap: 8px; }
+.reveal .s15-dots i {
+  display: block; width: 13px; height: 13px; border-radius: 50%;
+  background: #C9CFD8;
+}
+.reveal .s15-url {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 32px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 22px;
+  color: var(--epoch-muted);
+}
+.reveal .s15-lock {
+  width: 11px; height: 9px; border-radius: 2px; background: var(--epoch-muted);
+  position: relative; top: 2px;
+}
+.reveal .s15-lock::before {
+  content: ""; position: absolute; left: 2px; top: -6px; width: 7px; height: 7px;
+  border: 2px solid var(--epoch-muted); border-bottom: 0; border-radius: 5px 5px 0 0;
+  box-sizing: border-box;
+}
+.reveal .s15-shot { position: relative; line-height: 0; }
+.reveal .s15-shot img { display: block; width: 100%; height: auto; margin: 0; }
+
+/* Red annotation (problem colour): ring on the clicked tile, arrow, label */
+.reveal .s15-ring {
+  position: absolute;
+  left: 76.04%;
+  top: 29.35%;
+  width: 66px;
+  height: 66px;
+  margin: -33px 0 0 -33px;
+  border: 4px solid var(--epoch-red);
+  border-radius: 50%;
+  box-sizing: border-box;
+  opacity: 0;
+}
+.reveal .s15-arrow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.reveal .s15-arrow path {
+  fill: none;
+  stroke: var(--epoch-red);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+}
+.reveal .s15-note {
+  position: absolute;
+  left: 52%;
+  top: 72%;
+  line-height: 1.1;
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif;
+  font-weight: 600;
+  font-size: 46px;
+  color: var(--epoch-red);
+  background: var(--epoch-red-soft);
+  border-radius: 12px;
+  padding: 10px 20px 12px;
+  opacity: 0;
+}
+.reveal .slides section.present .s15-ring {
+  animation: s15-ring 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) 4.6s both, s15-pulse 1.4s ease-in-out 5.4s 3;
+}
+.reveal .slides section.present .s15-arrow path { animation: draw-1 0.7s ease-out 5s both; }
+.reveal .slides section.present .s15-arrow .s15-head { animation-delay: 5.6s; animation-duration: 0.25s; }
+.reveal .slides section.present .s15-note { animation: rise-in 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 5.1s both; }
+@keyframes s15-ring {
+  from { opacity: 0; transform: scale(2.2); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes s15-pulse {
+  50% { box-shadow: 0 0 0 10px rgba(214, 69, 69, 0.22); }
+}
+
+/* Right column: what one-at-a-time adds up to (from our TMF mirror README) */
+.reveal .s15-side {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.reveal .s15-fact { display: flex; flex-direction: column; line-height: 1.05; }
+.reveal .s15-big {
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif;
+  font-weight: 600;
+  font-size: 60px;
+  color: var(--epoch-ink);
+}
+.reveal .s15-lbl { font-size: 26px; color: var(--epoch-muted); margin-top: 2px; }
+.reveal .s15-total {
+  border-top: 3px solid var(--epoch-ink);
+  padding-top: 12px;
+}
+.reveal .s15-total .s15-big { color: var(--epoch-red); font-size: 72px; }
+.reveal .s15-script {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.reveal .s15-py {
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+  font-size: 22px;
+  color: var(--epoch-muted);
+}
+.reveal .s15-script .chip { font-size: 28px; padding: 6px 18px; }

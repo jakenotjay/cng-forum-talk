@@ -1,0 +1,25 @@
+## Mapping & quantifying the first mile {#slide-01}
+
+```{=html}
+<svg class="s01-defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <filter id="s01-ink" color-interpolation-filters="sRGB">
+    <feFlood flood-color="#0A1628"/>
+    <feComposite in2="SourceAlpha" operator="in"/>
+  </filter>
+</svg>
+<div class="s01-wall">
+  <div class="s01-cell"><img class="s01-logo" style="--h:68px" src="images/logos/s01-mono-altana.png" alt="Altana"></div>
+  <div class="s01-cell"><img class="s01-logo" style="--h:122px" src="images/logos/Resilinc_logo.svg" alt="Resilinc"></div>
+  <div class="s01-cell"><img class="s01-logo" style="--h:66px" src="images/logos/s01-mono-sphera.png" alt="Sphera"></div>
+  <div class="s01-cell"><img class="s01-logo" style="--h:84px" src="images/logos/s01-mono-gar.png" alt="GAR"></div>
+  <div class="s01-cell"><img class="s01-logo" style="--h:150px" src="images/logos/s01-mono-wwf.png" alt="WWF"></div>
+  <div class="s01-cell"><img class="s01-logo" style="--h:74px" src="images/logos/11Foundry_logo.svg" alt="11 Foundry"></div>
+  <div class="s01-cell"><img class="s01-logo" style="--h:76px" src="images/logos/Assent-Logo.svg" alt="Assent"></div>
+  <div class="s01-cell"><img class="s01-logo" style="--h:142px" src="images/logos/s01-mono-lujeri.png" alt="Lujeri Tea"></div>
+  <div class="s01-cell"><img class="s01-logo" style="--h:76px" src="images/logos/s01-mono-infor.png" alt="Infor"></div>
+</div>
+```
+
+::: notes
+At Epoch we're mapping and quantifying the first mile of soft commodity supply chains, things like palm oil, cocoa and soy. Our customers are mostly managing risk in those supply chains, both regulatory, like the EUDR, and longer-term degradation from land use change.
+:::

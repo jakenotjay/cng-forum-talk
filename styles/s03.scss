@@ -1,0 +1,103 @@
+/*-- scss:rules --*/
+/* Slide 3 (wwf): classes prefixed .s03- */
+/* Chart card left (SVG from scripts/gen_s03_chart.py, bars digitised from the pilot
+   study's Figure 13), three stats stacked on the right, source line underneath.
+   Beats: card 0.3 s, bars grow 0.8-2.6 s, percentile markers 3.4-4.3 s,
+   worst-5% highlight 5 s, numbers 6.2 / 7.4 / 8.8 s. */
+
+.reveal .s03 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 128px;
+  bottom: 0;
+}
+.reveal .s03 p { margin: 0; }
+
+/* ---- chart card ---- */
+.reveal .s03-card {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1010px;
+  padding: 14px 16px 6px 10px;
+}
+.reveal svg.s03-chart { display: block; width: 100%; height: auto; overflow: visible; }
+.reveal .s03-chart text { font-family: 'Google Sans', 'Google Sans Text', system-ui, sans-serif; }
+
+.reveal .s03-chart .s03-title { fill: #0A1628; font-size: 29px; font-weight: 500; }
+.reveal .s03-chart .s03-ylab { fill: #5B6878; font-size: 23px; font-weight: 500; text-anchor: middle; }
+.reveal .s03-chart .s03-tick { fill: #5B6878; font-size: 22px; text-anchor: end; font-variant-numeric: tabular-nums; }
+.reveal .s03-gl { stroke: #E3E7ED; stroke-width: 1.5; }
+.reveal .s03-base { stroke: #0A1628; stroke-width: 2; opacity: 0.5; }
+
+.reveal .s03-rest, .reveal .s03-worst { fill: #9AA4B2; }
+.reveal .s03-band { fill: #DCE7FB; }
+
+.reveal .s03-pct line { stroke: #5B6878; stroke-width: 2.5; stroke-dasharray: 7 6; }
+.reveal .s03-chart .s03-pct text { fill: #5B6878; font-size: 22px; font-weight: 500; text-anchor: middle; }
+.reveal .s03-pct-5 line { stroke: #376FD0; stroke-width: 3; }
+.reveal .s03-chart .s03-pct-5 text { fill: #376FD0; font-weight: 700; }
+.reveal .s03-chart .s03-hl-t { fill: #376FD0; font-size: 26px; font-weight: 700; }
+
+/* ---- stats ---- */
+.reveal .s03-stats {
+  position: absolute;
+  left: 1070px;
+  right: 0;
+  top: 0;
+  height: 597px; /* the card's height; the stack is centred against it */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 22px;
+}
+.reveal .s03-stat { display: flex; flex-direction: column; }
+.reveal .s03-stat-sm { margin-top: 20px; padding-top: 34px; border-top: 2px solid #D9DEE5; }
+.reveal .s03-num {
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif;
+  font-weight: 600;
+  font-size: 120px;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: #0A1628;
+}
+.reveal .s03-num.s03-blue { color: #376FD0; }
+.reveal .s03-lab { margin-top: 6px; font-size: 28px; line-height: 1.2; color: #0A1628; }
+.reveal .s03-stat-sm .s03-num { font-size: 80px; }
+.reveal .s03-stat-sm .s03-lab { color: #5B6878; }
+
+.reveal .s03-source {
+  position: absolute;
+  left: 0;
+  bottom: 14px;
+  font-size: 22px;
+  color: #5B6878;
+}
+
+/* ---- animation (replays on each visit) ---- */
+.reveal .slides section .s03-card { opacity: 0; }
+.reveal .slides section .s03-bars { transform-box: view-box; transform-origin: 0 612px; transform: scaleY(0); }
+.reveal .slides section :is(.s03-pct, .s03-hl, .s03-band) { opacity: 0; }
+
+.reveal .slides section.present .s03-card { animation: fade-in 0.7s ease-out 0.3s both; }
+.reveal .slides section.present .s03-bars {
+  animation: s03-grow 1.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.8s both;
+}
+.reveal .slides section.present .s03-pct { animation: fade-in 0.6s ease-out var(--d) both; }
+.reveal .slides section.present .s03-band { animation: fade-in 0.7s ease-out 5s both; }
+.reveal .slides section.present .s03-worst { animation: s03-blue 0.7s ease-out 5s both; }
+.reveal .slides section.present .s03-hl { animation: s03-slide 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 5.2s both; }
+
+@keyframes s03-grow {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+@keyframes s03-blue {
+  from { fill: #9AA4B2; }
+  to   { fill: #376FD0; }
+}
+@keyframes s03-slide {
+  from { opacity: 0; transform: translateX(-16px); }
+  to   { opacity: 1; transform: none; }
+}

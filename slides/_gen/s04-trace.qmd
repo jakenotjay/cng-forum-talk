@@ -1,0 +1,138 @@
+```{=html}
+<svg class="s04-svg" viewBox="0 0 1600 680" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tree from a brand down through up to six or seven tiers of suppliers to mills, fed by web, media and proprietary sources">
+<defs><linearGradient id="s04-cont-grad" gradientUnits="userSpaceOnUse" x1="0" y1="491" x2="0" y2="580"><stop offset="0" stop-color="#376FD0" stop-opacity="0"/><stop offset="1" stop-color="#376FD0" stop-opacity="0.9"/></linearGradient></defs>
+<g class="s04-label s04-pop-fade" style="--d:2.00s"><text class="s04-tier" x="70" y="150">Tier 1</text><text class="s04-tiername" x="70" y="186">Manufacturers</text></g>
+<g class="s04-label s04-pop-fade" style="--d:3.40s"><text class="s04-tier" x="70" y="264">Tier 2</text><text class="s04-tiername" x="70" y="300">Traders & refiners</text></g>
+<g class="s04-label s04-pop-fade s04-label-cont" style="--d:4.80s"><text class="s04-tier" x="70" y="412">Tier 3, 4, 5 …</text><text class="s04-tiername" x="70" y="448">up to 6–7 tiers deep</text></g>
+<g class="s04-label s04-pop-fade s04-label-final" style="--d:7.20s"><text class="s04-tier" x="70" y="606">Tier N</text><text class="s04-tiername" x="70" y="642">Mills & facilities</text></g>
+<g class="s04-edges">
+<path class="s04-edge" pathLength="1" d="M790,84 C790,110 540,110 540,137" style="--d:1.75s"/>
+<path class="s04-edge" pathLength="1" d="M790,84 C790,110 790,110 790,137" style="--d:1.79s"/>
+<path class="s04-edge" pathLength="1" d="M790,84 C790,110 1040,110 1040,137" style="--d:1.83s"/>
+</g>
+<g class="s04-edges">
+<path class="s04-edge" pathLength="1" d="M540,183 C540,217 465,217 465,251" style="--d:3.15s"/>
+<path class="s04-edge" pathLength="1" d="M540,183 C540,217 595,217 595,251" style="--d:3.19s"/>
+<path class="s04-edge" pathLength="1" d="M790,183 C790,217 725,217 725,251" style="--d:3.23s"/>
+<path class="s04-edge" pathLength="1" d="M790,183 C790,217 855,217 855,251" style="--d:3.27s"/>
+<path class="s04-edge" pathLength="1" d="M1040,183 C1040,217 985,217 985,251" style="--d:3.31s"/>
+<path class="s04-edge" pathLength="1" d="M1040,183 C1040,217 1115,217 1115,251" style="--d:3.35s"/>
+<path class="s04-edge" pathLength="1" d="M540,183 C540,217 725,217 725,251" style="--d:3.23s"/>
+<path class="s04-edge" pathLength="1" d="M1040,183 C1040,217 855,217 855,251" style="--d:3.27s"/>
+</g>
+<g class="s04-edges" opacity="0.55">
+<path class="s04-edge" pathLength="1" d="M465,297 C465,330 440,330 440,364" style="--d:4.55s"/>
+<path class="s04-edge" pathLength="1" d="M465,297 C465,330 540,330 540,364" style="--d:4.59s"/>
+<path class="s04-edge" pathLength="1" d="M595,297 C595,330 540,330 540,364" style="--d:4.59s"/>
+<path class="s04-edge" pathLength="1" d="M725,297 C725,330 640,330 640,364" style="--d:4.63s"/>
+<path class="s04-edge" pathLength="1" d="M725,297 C725,330 740,330 740,364" style="--d:4.67s"/>
+<path class="s04-edge" pathLength="1" d="M855,297 C855,330 740,330 740,364" style="--d:4.67s"/>
+<path class="s04-edge" pathLength="1" d="M855,297 C855,330 840,330 840,364" style="--d:4.71s"/>
+<path class="s04-edge" pathLength="1" d="M985,297 C985,330 840,330 840,364" style="--d:4.71s"/>
+<path class="s04-edge" pathLength="1" d="M985,297 C985,330 940,330 940,364" style="--d:4.75s"/>
+<path class="s04-edge" pathLength="1" d="M1115,297 C1115,330 1040,330 1040,364" style="--d:4.79s"/>
+<path class="s04-edge" pathLength="1" d="M1115,297 C1115,330 1140,330 1140,364" style="--d:4.83s"/>
+<path class="s04-edge" pathLength="1" d="M595,297 C595,330 640,330 640,364" style="--d:4.63s"/>
+</g>
+<g class="s04-edges" opacity="0.26">
+<path class="s04-edge" pathLength="1" d="M440,404 C440,424 438,424 438,443" style="--d:5.35s"/>
+<path class="s04-edge" pathLength="1" d="M540,404 C540,424 526,424 526,443" style="--d:5.39s"/>
+<path class="s04-edge" pathLength="1" d="M540,404 C540,424 614,424 614,443" style="--d:5.43s"/>
+<path class="s04-edge" pathLength="1" d="M640,404 C640,424 702,424 702,443" style="--d:5.47s"/>
+<path class="s04-edge" pathLength="1" d="M740,404 C740,424 702,424 702,443" style="--d:5.47s"/>
+<path class="s04-edge" pathLength="1" d="M740,404 C740,424 790,424 790,443" style="--d:5.51s"/>
+<path class="s04-edge" pathLength="1" d="M840,404 C840,424 878,424 878,443" style="--d:5.55s"/>
+<path class="s04-edge" pathLength="1" d="M940,404 C940,424 878,424 878,443" style="--d:5.55s"/>
+<path class="s04-edge" pathLength="1" d="M940,404 C940,424 966,424 966,443" style="--d:5.59s"/>
+<path class="s04-edge" pathLength="1" d="M1040,404 C1040,424 1054,424 1054,443" style="--d:5.63s"/>
+<path class="s04-edge" pathLength="1" d="M1140,404 C1140,424 1142,424 1142,443" style="--d:5.67s"/>
+<path class="s04-edge" pathLength="1" d="M1040,404 C1040,424 966,424 966,443" style="--d:5.59s"/>
+</g>
+<g class="s04-pop-fade" style="--d:6.20s">
+<path class="s04-cont" d="M439,491 V580"/>
+<path class="s04-cont" d="M517,491 V580"/>
+<path class="s04-cont" d="M595,491 V580"/>
+<path class="s04-cont" d="M673,491 V580"/>
+<path class="s04-cont" d="M751,491 V580"/>
+<path class="s04-cont" d="M829,491 V580"/>
+<path class="s04-cont" d="M907,491 V580"/>
+<path class="s04-cont" d="M985,491 V580"/>
+<path class="s04-cont" d="M1063,491 V580"/>
+<path class="s04-cont" d="M1141,491 V580"/>
+</g>
+<g class="s04-dots">
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:1.45s;--dx:-656px;--dy:-132px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:1.49s;--dx:-406px;--dy:-132px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:1.53s;--dx:-156px;--dy:-132px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:2.85s;--dx:-731px;--dy:-18px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:2.89s;--dx:-601px;--dy:-18px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:2.93s;--dx:-471px;--dy:-18px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:2.97s;--dx:-341px;--dy:-18px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:3.01s;--dx:-211px;--dy:-18px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:3.05s;--dx:-81px;--dy:-18px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:6.65s;--dx:-757px;--dy:324px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:6.69s;--dx:-679px;--dy:324px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:6.73s;--dx:-601px;--dy:324px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:6.77s;--dx:-523px;--dy:324px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:6.81s;--dx:-445px;--dy:324px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:6.85s;--dx:-367px;--dy:324px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:6.89s;--dx:-289px;--dy:324px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:6.93s;--dx:-211px;--dy:324px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:6.97s;--dx:-133px;--dy:324px"/>
+<circle class="s04-dot" cx="1196" cy="292" r="8" style="--d:7.01s;--dx:-55px;--dy:324px"/>
+</g>
+<g class="s04-node s04-pop" style="--d:0.40s"><rect class="s04-brand" x="675" y="8" width="230" height="76" rx="16"/><text class="s04-brand-text" x="790" y="56" text-anchor="middle">CPG brand</text></g>
+<g>
+<g class="s04-node s04-pop" style="--d:2.00s"><rect class="s04-mid" x="502" y="137" width="76" height="46" rx="12"/></g>
+<g class="s04-node s04-pop" style="--d:2.04s"><rect class="s04-mid" x="752" y="137" width="76" height="46" rx="12"/></g>
+<g class="s04-node s04-pop" style="--d:2.08s"><rect class="s04-mid" x="1002" y="137" width="76" height="46" rx="12"/></g>
+</g>
+<g>
+<g class="s04-node s04-pop" style="--d:3.40s"><rect class="s04-mid" x="427" y="251" width="76" height="46" rx="12"/></g>
+<g class="s04-node s04-pop" style="--d:3.44s"><rect class="s04-mid" x="557" y="251" width="76" height="46" rx="12"/></g>
+<g class="s04-node s04-pop" style="--d:3.48s"><rect class="s04-mid" x="687" y="251" width="76" height="46" rx="12"/></g>
+<g class="s04-node s04-pop" style="--d:3.52s"><rect class="s04-mid" x="817" y="251" width="76" height="46" rx="12"/></g>
+<g class="s04-node s04-pop" style="--d:3.56s"><rect class="s04-mid" x="947" y="251" width="76" height="46" rx="12"/></g>
+<g class="s04-node s04-pop" style="--d:3.60s"><rect class="s04-mid" x="1077" y="251" width="76" height="46" rx="12"/></g>
+</g>
+<g opacity="0.55">
+<g class="s04-node s04-pop" style="--d:4.80s"><rect class="s04-mid" x="407" y="364" width="66" height="40" rx="10"/></g>
+<g class="s04-node s04-pop" style="--d:4.84s"><rect class="s04-mid" x="507" y="364" width="66" height="40" rx="10"/></g>
+<g class="s04-node s04-pop" style="--d:4.88s"><rect class="s04-mid" x="607" y="364" width="66" height="40" rx="10"/></g>
+<g class="s04-node s04-pop" style="--d:4.92s"><rect class="s04-mid" x="707" y="364" width="66" height="40" rx="10"/></g>
+<g class="s04-node s04-pop" style="--d:4.96s"><rect class="s04-mid" x="807" y="364" width="66" height="40" rx="10"/></g>
+<g class="s04-node s04-pop" style="--d:5.00s"><rect class="s04-mid" x="907" y="364" width="66" height="40" rx="10"/></g>
+<g class="s04-node s04-pop" style="--d:5.04s"><rect class="s04-mid" x="1007" y="364" width="66" height="40" rx="10"/></g>
+<g class="s04-node s04-pop" style="--d:5.08s"><rect class="s04-mid" x="1107" y="364" width="66" height="40" rx="10"/></g>
+</g>
+<g opacity="0.26">
+<g class="s04-node s04-pop" style="--d:5.60s"><rect class="s04-mid" x="410" y="443" width="56" height="34" rx="9"/></g>
+<g class="s04-node s04-pop" style="--d:5.64s"><rect class="s04-mid" x="498" y="443" width="56" height="34" rx="9"/></g>
+<g class="s04-node s04-pop" style="--d:5.68s"><rect class="s04-mid" x="586" y="443" width="56" height="34" rx="9"/></g>
+<g class="s04-node s04-pop" style="--d:5.72s"><rect class="s04-mid" x="674" y="443" width="56" height="34" rx="9"/></g>
+<g class="s04-node s04-pop" style="--d:5.76s"><rect class="s04-mid" x="762" y="443" width="56" height="34" rx="9"/></g>
+<g class="s04-node s04-pop" style="--d:5.80s"><rect class="s04-mid" x="850" y="443" width="56" height="34" rx="9"/></g>
+<g class="s04-node s04-pop" style="--d:5.84s"><rect class="s04-mid" x="938" y="443" width="56" height="34" rx="9"/></g>
+<g class="s04-node s04-pop" style="--d:5.88s"><rect class="s04-mid" x="1026" y="443" width="56" height="34" rx="9"/></g>
+<g class="s04-node s04-pop" style="--d:5.92s"><rect class="s04-mid" x="1114" y="443" width="56" height="34" rx="9"/></g>
+</g>
+<g class="s04-node s04-pop" style="--d:7.20s"><circle class="s04-halo" cx="439" cy="616" r="38" style="--g:8.60s"/><path class="s04-fac" d="M413,638 L413,614 L427,604 L427,614 L441,604 L441,614 L453,606 L453,590 L463,590 L463,638 Z" style="--g:8.60s"/></g>
+<g class="s04-node s04-pop" style="--d:7.24s"><circle class="s04-halo" cx="517" cy="616" r="38" style="--g:8.65s"/><path class="s04-fac" d="M491,638 L491,614 L505,604 L505,614 L519,604 L519,614 L531,606 L531,590 L541,590 L541,638 Z" style="--g:8.65s"/></g>
+<g class="s04-node s04-pop" style="--d:7.28s"><circle class="s04-halo" cx="595" cy="616" r="38" style="--g:8.70s"/><path class="s04-fac" d="M569,638 L569,614 L583,604 L583,614 L597,604 L597,614 L609,606 L609,590 L619,590 L619,638 Z" style="--g:8.70s"/></g>
+<g class="s04-node s04-pop" style="--d:7.32s"><circle class="s04-halo" cx="673" cy="616" r="38" style="--g:8.75s"/><path class="s04-fac" d="M647,638 L647,614 L661,604 L661,614 L675,604 L675,614 L687,606 L687,590 L697,590 L697,638 Z" style="--g:8.75s"/></g>
+<g class="s04-node s04-pop" style="--d:7.36s"><circle class="s04-halo" cx="751" cy="616" r="38" style="--g:8.80s"/><path class="s04-fac" d="M725,638 L725,614 L739,604 L739,614 L753,604 L753,614 L765,606 L765,590 L775,590 L775,638 Z" style="--g:8.80s"/></g>
+<g class="s04-node s04-pop" style="--d:7.40s"><circle class="s04-halo" cx="829" cy="616" r="38" style="--g:8.85s"/><path class="s04-fac" d="M803,638 L803,614 L817,604 L817,614 L831,604 L831,614 L843,606 L843,590 L853,590 L853,638 Z" style="--g:8.85s"/></g>
+<g class="s04-node s04-pop" style="--d:7.44s"><circle class="s04-halo" cx="907" cy="616" r="38" style="--g:8.90s"/><path class="s04-fac" d="M881,638 L881,614 L895,604 L895,614 L909,604 L909,614 L921,606 L921,590 L931,590 L931,638 Z" style="--g:8.90s"/></g>
+<g class="s04-node s04-pop" style="--d:7.48s"><circle class="s04-halo" cx="985" cy="616" r="38" style="--g:8.95s"/><path class="s04-fac" d="M959,638 L959,614 L973,604 L973,614 L987,604 L987,614 L999,606 L999,590 L1009,590 L1009,638 Z" style="--g:8.95s"/></g>
+<g class="s04-node s04-pop" style="--d:7.52s"><circle class="s04-halo" cx="1063" cy="616" r="38" style="--g:9.00s"/><path class="s04-fac" d="M1037,638 L1037,614 L1051,604 L1051,614 L1065,604 L1065,614 L1077,606 L1077,590 L1087,590 L1087,638 Z" style="--g:9.00s"/></g>
+<g class="s04-node s04-pop" style="--d:7.56s"><circle class="s04-halo" cx="1141" cy="616" r="38" style="--g:9.05s"/><path class="s04-fac" d="M1115,638 L1115,614 L1129,604 L1129,614 L1143,604 L1143,614 L1155,606 L1155,590 L1165,590 L1165,638 Z" style="--g:9.05s"/></g>
+<g class="s04-pop-fade" style="--d:1.0s">
+<text class="s04-src-head" x="1262" y="162">Aggregated from</text>
+<path class="s04-bracket" d="M1250,212 H1232 V372 H1250 M1250,292 H1202"/>
+<path class="s04-arrow" d="M1210,282 L1196,292 L1210,302 Z"/>
+</g>
+<g class="s04-chip s04-pop-fade" style="--d:1.00s"><rect class="s04-chip-halo" x="1256" y="179" width="216" height="66" rx="33" style="--p:1.15s"/><rect class="s04-chip-halo" x="1256" y="179" width="216" height="66" rx="33" style="--p:2.55s"/><rect class="s04-chip-halo" x="1256" y="179" width="216" height="66" rx="33" style="--p:6.35s"/><rect class="s04-chip-bg" x="1262" y="185" width="204" height="54" rx="27"/><text class="s04-chip-text" x="1364" y="221" text-anchor="middle">web sources</text></g>
+<g class="s04-chip s04-pop-fade" style="--d:1.20s"><rect class="s04-chip-halo" x="1256" y="259" width="131" height="66" rx="33" style="--p:1.15s"/><rect class="s04-chip-halo" x="1256" y="259" width="131" height="66" rx="33" style="--p:2.55s"/><rect class="s04-chip-halo" x="1256" y="259" width="131" height="66" rx="33" style="--p:6.35s"/><rect class="s04-chip-bg" x="1262" y="265" width="119" height="54" rx="27"/><text class="s04-chip-text" x="1322" y="301" text-anchor="middle">media</text></g>
+<g class="s04-chip s04-pop-fade" style="--d:1.40s"><rect class="s04-chip-halo" x="1256" y="339" width="329" height="66" rx="33" style="--p:1.15s"/><rect class="s04-chip-halo" x="1256" y="339" width="329" height="66" rx="33" style="--p:2.55s"/><rect class="s04-chip-halo" x="1256" y="339" width="329" height="66" rx="33" style="--p:6.35s"/><rect class="s04-chip-bg" x="1262" y="345" width="317" height="54" rx="27"/><text class="s04-chip-text" x="1420" y="381" text-anchor="middle">proprietary sources</text></g>
+</svg>
+```

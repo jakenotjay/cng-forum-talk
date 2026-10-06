@@ -1,0 +1,9 @@
+## Supply chains remain obscure {#slide-02}
+
+::: {.s02-wrap}
+{{< include slides/_gen/s02-funnel.qmd >}}
+:::
+
+::: notes
+Through a long and complicated history, most companies have very little idea where their raw commodities actually come from. There are often five or more tiers between a brand and the farm, and most have no visibility past the first one.
+:::

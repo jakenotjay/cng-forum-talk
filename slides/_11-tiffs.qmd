@@ -1,0 +1,9 @@
+## TIFFs, though {#slide-11}
+
+::: {.s11-wrap}
+{{< include slides/_gen/s11-panels.qmd >}}
+:::
+
+::: notes
+Of course, nearly all of it is TIFFs, which brings a few wrinkles. People like to write their tiffs on UTM grids, or on global ten-degree tiles, or they overwrite them in place whenever they fancy, which the alerts datasets like GLAD do every single day.
+:::

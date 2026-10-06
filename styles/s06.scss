@@ -1,0 +1,57 @@
+/*-- scss:rules --*/
+/* Slide 6 (pipeline): classes prefixed .s06-
+   SVG: slides/_gen/pipeline-s06.qmd (scripts/gen_pipeline.py). Each element
+   carries --i (draw order); the pipeline draws left to right over 0-4 s,
+   then at ~9 s "export to icechunk" glows and the later jobs mute. */
+.reveal .slides section#slide-06 .s06-wrap {
+  position: absolute; left: 0; right: 0; top: 222px;
+}
+
+/* hidden until the slide is present */
+.reveal .slides section .s06-pl :is(.s06-node, .s06-arrow, .s06-group) { opacity: 0; }
+.reveal .slides section .s06-pl .s06-link { stroke-dasharray: 1; stroke-dashoffset: 1; }
+
+.reveal .slides section.present .s06-pl :is(.s06-node, .s06-arrow, .s06-group) {
+  animation: s06-in 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) calc(var(--i) * 0.42s) both;
+}
+.reveal .slides section.present .s06-pl .s06-link {
+  animation: s06-draw 0.6s ease-out calc(var(--i) * 0.42s + 0.15s) both;
+}
+
+/* ~9 s: focus on the first step */
+.reveal .slides section.present .s06-pl :is(.s06-job-zonal, .s06-job-normalise, .s06-svc-bq, .s06-svc-pg) {
+  animation:
+    s06-in 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) calc(var(--i) * 0.42s) both,
+    s06-mute 0.8s ease 9s forwards;
+}
+.reveal .slides section.present .s06-pl :is(.s06-link-bq-zonal, .s06-link-bq-normalise, .s06-link-pg-normalise) {
+  animation:
+    s06-draw 0.6s ease-out calc(var(--i) * 0.42s + 0.15s) both,
+    s06-mute 0.8s ease 9s forwards;
+}
+.reveal .slides section.present .s06-pl .s06-halo-export {
+  animation:
+    s06-glow-in 0.7s ease-out 9s forwards,
+    s06-glow-pulse 1.8s ease-in-out 9.7s infinite;
+}
+
+@keyframes s06-in {
+  from { opacity: 0; transform: translateX(-18px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes s06-draw {
+  from { stroke-dashoffset: 1; }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes s06-mute {
+  from { opacity: 1; }
+  to   { opacity: 0.28; }
+}
+@keyframes s06-glow-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes s06-glow-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.45; }
+}

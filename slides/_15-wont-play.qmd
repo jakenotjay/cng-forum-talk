@@ -1,0 +1,34 @@
+## Some data won't play {#slide-15}
+
+```{=html}
+<div class="s15-wrap">
+  <div class="s15-browser card a-rise" style="--d:0.3s">
+    <div class="s15-bar">
+      <span class="s15-dots"><i></i><i></i><i></i></span>
+      <span class="s15-url"><span class="s15-lock"></span>forobs.jrc.ec.europa.eu/TMF/data</span>
+    </div>
+    <div class="s15-shot">
+      <img src="images/src/s15-tmf.png" alt="JRC Tropical Moist Forest download page: a world map of 10 by 10 degree tiles; clicking tile N10_E90 lists one download link per file">
+      <span class="s15-ring"></span>
+      <svg class="s15-arrow" viewBox="0 0 1000 660" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M 760 470 C 790 380, 790 300, 770 238" pathLength="1"/>
+        <path class="s15-head" d="M 754 258 L 769 234 L 786 256" pathLength="1"/>
+      </svg>
+      <div class="s15-note">one tile at a time</div>
+    </div>
+  </div>
+  <div class="s15-side">
+    <div class="s15-fact a-fade" style="--d:7s"><span class="s15-big">86</span><span class="s15-lbl">tiles of 10°&#8202;×&#8202;10°</span></div>
+    <div class="s15-fact a-fade" style="--d:7.6s"><span class="s15-big">× 41</span><span class="s15-lbl">layers each</span></div>
+    <div class="s15-fact s15-total a-fade" style="--d:8.2s"><span class="s15-big">3,526</span><span class="s15-lbl">files, one click each</span></div>
+    <div class="s15-script a-rise" style="--d:10s">
+      <span class="s15-py">served by download.py</span>
+      <span class="chip bad">no range requests</span>
+    </div>
+  </div>
+</div>
+```
+
+::: notes
+Then there's the data you just can't virtualise. The JRC Tropical Moist Forest page has you click each tile, one at a time, and every file comes out of a Python script that ignores range requests and hands you the whole thing regardless.
+:::

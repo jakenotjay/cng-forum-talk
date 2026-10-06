@@ -1,0 +1,9 @@
+## Three families {#slide-13}
+
+::: {.s13-wrap}
+{{< include slides/_gen/s13-panels.qmd >}}
+:::
+
+::: notes
+So instead we split our datasets into three families: static global manifests that open as one stitched array, tiled static manifests like TMF, and dynamic stores virtualised on the fly. Whichever family, it all ends up reprojected onto the target geobox.
+:::

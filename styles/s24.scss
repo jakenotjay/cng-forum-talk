@@ -1,0 +1,157 @@
+/*-- scss:rules --*/
+/* Slide file 24 (deck position 7, supply shed): classes prefixed .s24-
+   Timeline (15 s): 0-3 mill + 90 min budget · 3-6.4 input tiles collapse to friction + key ·
+   6.3-9 spread grows from the mill, timer 0 -> 90 min · 9-12 outline cut, 50 km circle, reach callouts ·
+   12-12.8 shed turns green, caption, all steps full. */
+
+.reveal .s24-wrap {
+  position: absolute;
+  left: 80px;
+  top: 150px;
+  width: 1440px;
+}
+.reveal .s24-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.reveal .s24-svg text { font-family: 'Google Sans', 'Google Sans Text', system-ui, sans-serif; }
+
+/* Map */
+.reveal .s24-land { fill: #E9E4D6; }
+.reveal .s24-card-edge { fill: none; stroke: #C9CFD8; stroke-width: 2; }
+.reveal .s24-eq { fill: none; stroke: #5B6878; stroke-opacity: 0.35; stroke-width: 1.5; stroke-dasharray: 8 8; }
+.reveal .s24-geo { font-size: 22px; fill: #5B6878; opacity: 0.8; font-style: italic; }
+.reveal .s24-scale path { fill: none; stroke: #5B6878; stroke-width: 2.5; }
+.reveal .s24-scale text { font-size: 22px; fill: #5B6878; }
+
+.reveal .s24-spread { fill: #376FD0; fill-opacity: 0.3; fill-rule: evenodd; transform-box: view-box; transform: scale(0); }
+.reveal .s24-front {
+  fill: none; stroke: #376FD0; stroke-width: 3; stroke-linejoin: round;
+  vector-effect: non-scaling-stroke; transform-box: view-box; transform: scale(0); opacity: 0;
+}
+.reveal .s24-final { fill: #57D16F; fill-opacity: 0.32; fill-rule: evenodd; opacity: 0; }
+.reveal .s24-outline {
+  fill: none; stroke: #0A1628; stroke-width: 3.5; stroke-linejoin: round;
+  stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0;
+}
+
+.reveal .s24-circle { fill: none; stroke: #0A1628; stroke-width: 2.5; stroke-dasharray: 12 9; opacity: 0; }
+.reveal .s24-circle-t { font-size: 22px; font-weight: 500; fill: #0A1628; opacity: 0;
+  paint-order: stroke; stroke: #E9E4D6; stroke-width: 6px; stroke-linejoin: round; }
+
+.reveal .s24-city { opacity: 0; }
+.reveal .s24-city circle { fill: #5B6878; stroke: #fff; stroke-width: 2; }
+.reveal .s24-city text { font-size: 22px; fill: #3A4656; font-weight: 500;
+  paint-order: stroke; stroke: #EDEAE0; stroke-width: 5px; stroke-linejoin: round; }
+
+.reveal .s24-callout { opacity: 0; }
+.reveal .s24-co-line { fill: none; stroke: #0A1628; stroke-width: 2.5; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.reveal .s24-co-tick { fill: none; stroke: #0A1628; stroke-width: 3; }
+.reveal .s24-co-bg { fill: #fff; stroke: #0A1628; stroke-width: 2; }
+.reveal .s24-co-t { font-size: 24px; font-weight: 700; fill: #0A1628; }
+
+/* Input tiles (schematic) */
+.reveal .s24-tiles-h { font-size: 22px; fill: #5B6878; font-style: italic; opacity: 0; }
+.reveal .s24-tile, .reveal .s24-fric, .reveal .s24-key { opacity: 0; }
+.reveal .s24-tile-bg { fill: #fff; }
+.reveal .s24-tile-edge { fill: none; stroke: #8C97A6; stroke-width: 2; }
+.reveal .s24-fric .s24-tile-edge { stroke: #0A1628; stroke-width: 2.5; }
+.reveal .s24-tile-n { font-size: 26px; font-weight: 700; fill: #0A1628; }
+.reveal .s24-tile-s { font-size: 22px; fill: #5B6878; }
+.reveal .s24-key-t { font-size: 22px; fill: #0A1628; }
+
+/* Mill */
+.reveal .s24-mill, .reveal .s24-pulse { opacity: 0; }
+.reveal .s24-pulse { fill: none; stroke: #376FD0; stroke-width: 3; transform-box: view-box; }
+.reveal .s24-mill { transform-box: view-box; }
+.reveal .s24-mill-l { opacity: 0; }
+.reveal .s24-mill-l rect { fill: #0A1628; }
+.reveal .s24-mill-l text { fill: #fff; font-size: 23px; font-weight: 500; }
+.reveal .s24-timer { opacity: 0; }
+.reveal .s24-timer rect { fill: #0A1628; }
+.reveal .s24-tick {
+  font-family: 'Berkeley Mono', ui-monospace, monospace !important;
+  font-size: 24px; font-weight: 700; fill: #fff; opacity: 0;
+}
+
+/* Caption */
+.reveal .s24-caption { opacity: 0; }
+.reveal .s24-caption rect { fill: #57D16F; fill-opacity: 0.6; stroke: #3FB557; stroke-width: 3; }
+.reveal .s24-caption text { font-size: 28px; fill: #0A1628; }
+.reveal .s24-cap-b { font-weight: 700; }
+
+/* Step rail */
+.reveal .s24-rail-line { fill: none; stroke: #C9CFD8; stroke-width: 3; }
+.reveal .s24-step { opacity: 0; }
+.reveal .s24-badge { fill: #376FD0; }
+.reveal .s24-badge-n { font-family: 'Space Grotesk', 'Google Sans', sans-serif !important; font-size: 30px; font-weight: 600; fill: #fff; }
+.reveal .s24-step-t { font-size: 30px; font-weight: 700; fill: #0A1628; }
+.reveal .s24-step-s { font-size: 23px; fill: #5B6878; }
+
+/* ---- Timeline (replays on every visit) ---- */
+.reveal .slides section.present {
+  .s24-map { animation: s24-in 0.5s ease-out 0.1s both; }
+
+  .s24-mill { animation: s24-drop 0.45s cubic-bezier(0.3, 0.7, 0.3, 1.25) 0.6s both; }
+  .s24-pulse { animation: s24-pulse 1.1s ease-out 1.1s both; }
+  .s24-mill-l1 { animation: s24-in 0.4s ease-out 1.2s both, s24-out 0.35s ease-in 5.95s forwards; }
+
+  .s24-step { animation: s24-rise 0.4s ease-out var(--d) both, s24-dim 0.4s ease-in var(--d2) forwards, s24-undim 0.4s ease-out 12s forwards; }
+  .s24-step-last { animation: s24-rise 0.4s ease-out var(--d) both; }
+
+  /* inputs: slide in, collapse into one friction tile, key, then out */
+  .s24-tiles { animation: s24-out 0.4s ease-in 6.4s forwards; }
+  .s24-tiles-h { animation: s24-in 0.4s ease-out 3s both; }
+  .s24-tile { animation: s24-slide 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d) both, s24-collapse 0.4s ease-in 4.45s forwards; }
+  .s24-fric { animation: s24-pop 0.4s cubic-bezier(0.2, 0.7, 0.2, 1.3) var(--d) both; transform-box: fill-box; transform-origin: center; }
+  .s24-key { animation: s24-in 0.4s ease-out var(--d) both; }
+
+  /* spread: the real outline grows about the mill so every edge is reached at 90 min */
+  .s24-spread { animation: s24-grow 2.7s linear 6.3s both, s24-out 0.8s ease-in-out 12s forwards; }
+  .s24-front { animation: s24-grow-front 2.7s linear 6.3s both, s24-out 0.5s ease-in 10.4s forwards; }
+  .s24-timer { animation: s24-in 0.3s ease-out 6.1s both, s24-out 0.35s ease-in 11.85s forwards; }
+  .s24-tick { animation: s24-on 0.01s linear var(--d) both, s24-off 0.01s linear var(--d2) forwards; }
+  .s24-tick-last { animation: s24-on 0.01s linear var(--d) both; }
+  .s24-city { animation: s24-in 0.5s ease-out 6.6s both; }
+
+  /* cut at 90 minutes */
+  .s24-outline { animation: s24-draw 1.8s ease-in-out 9s both, s24-green 0.8s ease-in-out 12s forwards; }
+  .s24-circle { animation: s24-in-40 0.5s ease-out 9.6s both, s24-out 0.4s ease-in 11.85s forwards; }
+  .s24-circle-t { animation: s24-in 0.5s ease-out 9.8s both, s24-out 0.4s ease-in 11.85s forwards; }
+  .s24-callout { animation: s24-in 0.2s ease-out var(--d) both, s24-out 0.4s ease-in 11.85s forwards; }
+  .s24-co-line { animation: s24-draw-plain 0.5s ease-out var(--d) both; }
+
+  /* the shed */
+  .s24-final { animation: s24-in 0.8s ease-in-out 12s both; }
+  .s24-mill-l2 { animation: s24-in 0.4s ease-out 12.3s both; }
+  .s24-caption { animation: s24-rise 0.45s ease-out 12.2s both; }
+}
+
+@keyframes s24-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes s24-in-40 { from { opacity: 0; } to { opacity: 0.45; } }
+@keyframes s24-out { to { opacity: 0; } }
+@keyframes s24-on { from { opacity: 0; } to { opacity: 1; } }
+@keyframes s24-off { from { opacity: 1; } to { opacity: 0; } }
+@keyframes s24-dim { to { opacity: 0.4; } }
+@keyframes s24-undim { from { opacity: 0.4; } to { opacity: 1; } }
+@keyframes s24-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes s24-drop {
+  from { opacity: 0; transform: translateY(-36px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes s24-pulse {
+  0% { opacity: 0.9; transform: scale(1); }
+  100% { opacity: 0; transform: scale(4); }
+}
+@keyframes s24-slide { from { opacity: 0; transform: translateX(60px); } to { opacity: 1; transform: none; } }
+@keyframes s24-collapse { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(var(--dy)) scale(0.96); } }
+@keyframes s24-pop { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: none; } }
+@keyframes s24-grow { from { transform: scale(0); } to { transform: scale(1); } }
+@keyframes s24-grow-front {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes s24-draw {
+  0% { stroke-dashoffset: 1; opacity: 0; }
+  2% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
+}
+@keyframes s24-draw-plain { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes s24-green { from { stroke: #0A1628; } to { stroke: #3FB557; } }

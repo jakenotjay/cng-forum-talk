@@ -1,0 +1,123 @@
+/*-- scss:rules --*/
+/* Slide 5 (process): classes prefixed .s05-. Five stage cards, 3 + 2,
+   images from scripts/gen_s05_cards.py. Cards reveal via .a-rise --d. */
+
+$s05-w: 360px;   // card image width (4:3)
+$s05-h: 270px;   // card image height
+$s05-gap: 112px; // column gap (chevrons sit in it)
+$s05-left: (1600px - 3 * $s05-w - 2 * $s05-gap) / 2;
+$s05-cap: 84px;  // caption block: title + one-line subtitle
+$s05-row2: $s05-h + $s05-cap + 34px;
+
+.reveal .s05-flow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 130px;
+  height: $s05-row2 + $s05-h + $s05-cap;
+}
+
+.reveal .s05-stage {
+  position: absolute;
+  width: $s05-w;
+  margin: 0;
+}
+.reveal .s05-c1 { left: $s05-left;                       top: 0; }
+.reveal .s05-c2 { left: $s05-left + $s05-w + $s05-gap;   top: 0; }
+.reveal .s05-c3 { left: $s05-left + 2 * ($s05-w + $s05-gap); top: 0; }
+/* Bottom row sits under the top row's gaps */
+.reveal .s05-c4 { left: $s05-left + $s05-w + $s05-gap / 2 - $s05-w / 2; top: $s05-row2; }
+.reveal .s05-c5 { left: $s05-left + 2 * $s05-w + 1.5 * $s05-gap - $s05-w / 2; top: $s05-row2; }
+
+.reveal .s05-img {
+  position: relative;
+  width: $s05-w;
+  height: $s05-h;
+  border-radius: 18px;
+}
+.reveal .s05-img > img,
+.reveal .s05-inset img {
+  max-width: none;
+  max-height: none;
+}
+.reveal .s05-img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reveal .s05-badge.step {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  border-radius: 10px;
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif;
+  font-size: 30px;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(10, 22, 40, 0.3);
+}
+
+/* AlphaEarth inset on stage 2, top right over plantation so the mill stays clear */
+.reveal .s05-inset {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 132px;
+  height: 132px;
+  border: 4px solid #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(10, 22, 40, 0.35);
+}
+.reveal .s05-inset img { width: 100%; height: 100%; display: block; margin: 0; }
+.reveal .s05-inset span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 6px;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Captions may run into the column gap so each subtitle stays on one line */
+.reveal .s05-stage figcaption {
+  width: $s05-w + $s05-gap - 8px;
+  margin-top: 14px;
+  padding-left: 2px;
+  text-align: left;
+  color: #0A1628;
+}
+.reveal .s05-stage figcaption b {
+  display: block;
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+.reveal .s05-stage figcaption span {
+  display: block;
+  margin-top: 4px;
+  font-size: 23px;
+  line-height: 1.25;
+  color: #0A1628;
+  opacity: 0.78;
+}
+
+.reveal .s05-c5 figcaption { width: 600px; }
+
+/* Chevrons in the column gaps, centred on the image */
+.reveal .s05-chev {
+  position: absolute;
+  width: 30px;
+  height: 34px;
+  fill: #376FD0;
+}
+.reveal .s05-v12 { left: $s05-left + $s05-w + $s05-gap / 2 - 15px; top: $s05-h / 2 - 17px; }
+.reveal .s05-v23 { left: $s05-left + 2 * $s05-w + 1.5 * $s05-gap - 15px; top: $s05-h / 2 - 17px; }
+.reveal .s05-v45 { left: $s05-left + 1.5 * $s05-w + $s05-gap - 15px; top: $s05-row2 + $s05-h / 2 - 17px; }

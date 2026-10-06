@@ -1,0 +1,21 @@
+## Ragged tiles ≠ one array {#slide-12}
+
+::: {.s12-wrap}
+::: {.s12-left}
+{{< include slides/_gen/s12-chunks.qmd >}}
+
+
+:::
+
+::: {.s12-right .a-rise style="--d:7s"}
+::: {.card .s12-card}
+![](images/src/s12-issue.png){.s12-shot fig-alt="VirtualiZarr issue 1078, Dangling pixel concatenation (variable-length chunks), opened by jakenotjay, with Tom Nicholas's comment that it is blocked in practice by issue 1111"}
+:::
+
+[[#1111]{.s12-num-ref} Concatenate arrays with padded final chunks]{.s12-sub .a-fade style="--d:8.5s"}
+:::
+:::
+
+::: notes
+The ten-degree tiles are the sneaky one. The tile size rarely divides evenly by the block size, so every tile ends in a smaller chunk, and stitching them gives you irregular chunks. I raised it on VirtualiZarr, and sadly it's quite hard to fix.
+:::

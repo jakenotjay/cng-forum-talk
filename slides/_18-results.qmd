@@ -1,0 +1,29 @@
+## Slide 18 {#slide-18 .hide-title}
+
+::: {.s18-grid}
+::: {.stat .s18-tile .a-rise style="--d:1s"}
+[2×]{.stat-value}
+[quicker]{.s18-label}
+[per job, same compute]{.s18-sub}
+:::
+
+::: {.stat .s18-tile .a-rise style="--d:4.5s"}
+[64]{.stat-value}
+[concurrent jobs]{.s18-label}
+[up from 4]{.s18-sub}
+:::
+
+::: {.stat .s18-tile .a-rise style="--d:8s"}
+[Stable]{.stat-value}
+[under load]{.s18-label}
+:::
+
+::: {.stat .s18-tile .a-rise style="--d:11s"}
+[Costs [↓]{.s18-down}]{.stat-value}
+[on Earth Engine]{.s18-label}
+:::
+:::
+
+::: notes
+Any given job now takes about half the time on the same compute. We've load tested up to 64 concurrent jobs, up from four, we're far more stable under load, and our Earth Engine costs are a fraction of what they were.
+:::

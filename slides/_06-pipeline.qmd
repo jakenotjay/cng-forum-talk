@@ -1,0 +1,9 @@
+## Computed on demand, per supply shed {#slide-06}
+
+::: {.s06-wrap .svg-fill}
+{{< include slides/_gen/pipeline-s06.qmd >}}
+:::
+
+::: notes
+All of this is computed on the fly, as a customer requests it. Each supply shed goes through a series of Prefect jobs on Kubernetes: export to icechunk, zonal stats, then normalise into Postgres. Today I'm mostly talking about that first step.
+:::

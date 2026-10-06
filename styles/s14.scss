@@ -1,0 +1,142 @@
+/*-- scss:rules --*/
+/* Slide 14 (protocol): classes prefixed .s14- */
+
+.reveal .s14-wrap {
+  display: flex;
+  gap: 44px;
+  align-items: center;
+  margin-top: 60px;
+}
+.reveal .s14-left { flex: 0 0 690px; }
+.reveal .s14-right { flex: 1 1 auto; min-width: 0; }
+
+/* Code: the real VirtualDatasetSource protocol, hand-highlighted */
+.reveal pre.code-card.s14-code {
+  width: 100%;
+  margin: 0;
+  font-size: 25px;
+  line-height: 1.55;
+  padding: 30px 34px;
+  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(10, 22, 40, 0.18);
+  overflow: hidden;
+}
+.reveal pre.code-card.s14-code code {
+  font-family: inherit;
+  max-height: none;
+  overflow: visible;
+  white-space: pre;
+  padding: 0;
+  background: none;
+  color: #E6EAF0;
+}
+.reveal .s14-code .s14-k { color: #8EB2F2; }
+.reveal .s14-code .s14-n,
+.reveal .s14-code .s14-f { color: #FFFFFF; font-weight: 700; }
+.reveal .s14-code .s14-t { color: #57D16F; }
+.reveal .s14-code .s14-s { color: #9AA6B5; font-style: italic; }
+.reveal .s14-code .s14-p {
+  color: #FFFFFF;
+  border-radius: 6px;
+  padding: 1px 4px;
+  margin: 0 -4px;
+}
+.reveal .slides section.present .s14-code .s14-p {
+  animation: s14-param 1.2s ease-out 4s both;
+}
+@keyframes s14-param {
+  from { background: rgba(55, 111, 208, 0); box-shadow: 0 0 0 0 rgba(55, 111, 208, 0); }
+  40%  { background: rgba(55, 111, 208, 0.95); box-shadow: 0 0 0 6px rgba(55, 111, 208, 0.35); }
+  to   { background: rgba(55, 111, 208, 0.85); box-shadow: 0 0 0 0 rgba(55, 111, 208, 0); }
+}
+
+.reveal .s14-left p { margin: 22px 0 0; }
+.reveal .s14-impl {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  font-size: 23px;
+  color: var(--epoch-muted);
+}
+.reveal .s14-impl .chip { font-size: 22px; padding: 3px 14px; }
+
+/* GeoBox card, after odc-geo's notebook repr */
+.reveal .s14-gb {
+  padding: 22px 26px 20px;
+  font-size: 23px;
+}
+.reveal .s14-gb-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--epoch-line);
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+.reveal .s14-gb-title {
+  font-family: 'Space Grotesk', 'Google Sans', sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+}
+.reveal .s14-gb-tag {
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+  font-size: 22px;
+  color: #fff;
+  background: var(--epoch-blue);
+  border-radius: 6px;
+  padding: 2px 10px;
+}
+.reveal .s14-gb-body { display: flex; gap: 24px; align-items: flex-start; }
+.reveal .s14-gb-left { flex: 0 0 318px; }
+.reveal .s14-gb-right { flex: 1 1 auto; min-width: 0; }
+.reveal .s14-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid #E6E9EE;
+  line-height: 1.2;
+}
+.reveal .s14-row > span:first-child { color: var(--epoch-muted); }
+.reveal .s14-val {
+  font-family: 'Berkeley Mono', ui-monospace, monospace;
+  font-size: 22px;
+  color: var(--epoch-ink);
+  white-space: nowrap;
+}
+.reveal .s14-gb svg { display: block; width: 100%; height: auto; }
+.reveal .s14-loc { margin-top: 18px; }
+.reveal .s14-gb p { margin: 0; }
+.reveal .s14-gb-note {
+  margin-top: 12px !important;
+  font-size: 22px;
+  line-height: 1.3;
+  color: var(--epoch-muted);
+}
+.reveal .s14-gb-cap {
+  margin-top: 10px !important;
+  font-size: 22px;
+  color: var(--epoch-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.reveal .s14-key-shed,
+.reveal .s14-key-hit {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+}
+.reveal .s14-key-shed { background: rgba(63, 181, 87, 0.35); border: 2px solid var(--epoch-green); }
+.reveal .s14-key-hit { background: rgba(55, 111, 208, 0.2); border: 1px solid var(--epoch-blue); margin-left: 10px; }
+
+/* Beats inside the card: the box, then its chunk grid, then the chunks the shed touches */
+.reveal .slides section .s14-zoom :is(.s14-grid, .s14-hit) { opacity: 0; }
+.reveal .slides section.present .s14-zoom .s14-grid { animation: fade-in 0.8s ease-out 5.4s both; }
+.reveal .slides section.present .s14-zoom .s14-hit { animation: fade-in 0.8s ease-out 6.8s both; }
+.reveal .slides section.present .s14-loc .s14-loc-mark { animation: s14-blink 1s ease-in-out 4.6s 2; }
+@keyframes s14-blink { 50% { opacity: 0.2; } }

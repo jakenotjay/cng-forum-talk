@@ -1,0 +1,26 @@
+## Come and chat {#slide-20 data-autoslide="0" data-state="no-bars"}
+
+::: {.s20-layout}
+::: {.s20-who}
+[Jake Wilkins]{.s20-name}
+
+::: {.s20-rows}
+[GitHub]{.s20-key} [jakenotjay]{.s20-val}
+
+[Web]{.s20-key} [epoch.blue]{.s20-val}
+:::
+
+![](images/epoch-logo-blue.png){.s20-logo fig-alt="Epoch"}
+:::
+
+::: {.s20-qr-card}
+{{< include slides/_gen/s20-qr.qmd >}}
+
+[Epoch open data]{.s20-qr-label}
+[source.coop/epoch]{.s20-qr-url}
+:::
+:::
+
+::: notes
+That's us. If any of this sounds familiar, whether it's TIFFs, Earth Engine or supply chains, come and find me at Recharge and Connect, and do have a look at the open data on Source Coop. Thanks very much.
+:::

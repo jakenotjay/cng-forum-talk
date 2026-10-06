@@ -1,0 +1,34 @@
+## One protocol: open(geobox, dates) → xarray {#slide-14}
+
+::: {.s14-wrap}
+
+::: {.s14-left}
+
+```{=html}
+<pre class="code-card s14-code a-fade" style="--d:0.4s"><code><span class="s14-k">class</span> <span class="s14-n">VirtualDatasetSource</span>(<span class="s14-t">Protocol</span>):
+    <span class="s14-k">async def</span> <span class="s14-f">open</span>(
+        self,
+        *,
+        <span class="s14-p">target_geobox</span>: <span class="s14-t">GeoBox</span>,
+        start_date: <span class="s14-t">datetime</span> | <span class="s14-k">None</span> = <span class="s14-k">None</span>,
+        end_date: <span class="s14-t">datetime</span> | <span class="s14-k">None</span> = <span class="s14-k">None</span>,
+    ) -> <span class="s14-t">xr.Dataset</span>:
+        <span class="s14-s">"""Raw bands, lazily reprojected
+        onto target_geobox."""</span></code></pre>
+```
+
+```{=html}
+<div class="s14-impl a-fade" style="--d:1.6s">implemented by every source <span class="chip">Hansen</span><span class="chip">JRC GFC</span><span class="chip">JRC TMF</span><span class="chip">GLAD</span><span class="chip">OPERA DIST</span><span class="chip">ForTy</span></div>
+```
+
+:::
+
+::: {.s14-right .a-rise style="--d:4s"}
+{{< include slides/_gen/s14-geobox.qmd >}}
+:::
+
+:::
+
+::: notes
+In code, every family implements one protocol: open takes a target geobox and a date window, and returns a lazy xarray dataset on our global grid. That means the rest of the pipeline never needs to know which family it's talking to.
+:::

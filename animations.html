@@ -258,7 +258,7 @@
 
   function init() {
     var slide = document.getElementById('slide-20');
-    if (!slide) return;
+    if (!slide || !slide.querySelector('canvas.grow-network')) return;
     var scene = growNetwork(slide), running = false;
 
     function show(current) {

@@ -1,0 +1,50 @@
+/*-- scss:rules --*/
+/* Slide 18 (results): classes prefixed .s18- */
+/* Four stat tiles, no visible headline. Tiles rise at 1, 4.5, 8 and 11 s (.a-rise --d). */
+
+.reveal .slides section#slide-18 > h2 { display: none; }
+
+.reveal .s18-grid {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 1600px;
+  height: 790px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 40px;
+}
+
+.reveal .stat.s18-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 56px;
+  border-radius: 24px;
+  box-shadow: inset 0 12px 0 #376FD0, 0 6px 24px rgba(10, 22, 40, 0.08);
+  padding-top: 12px;
+}
+.reveal .stat.s18-tile p { margin: 0; }
+.reveal .stat.s18-tile .stat-value {
+  font-size: 168px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #376FD0;
+}
+.reveal .s18-tile .s18-down { color: #3FB557; }
+.reveal .s18-tile .s18-label {
+  display: block;
+  margin-top: 14px;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.15;
+  color: #0A1628;
+}
+.reveal .s18-tile .s18-sub {
+  display: block;
+  margin-top: 6px;
+  font-size: 30px;
+  line-height: 1.2;
+  color: #5B6878;
+}
