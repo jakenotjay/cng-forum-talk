@@ -2,9 +2,9 @@
 /* Slide file 24 (deck position 7, supply shed): classes prefixed .s24-
    Layout: map card left (same card, extent and basemap as the next slide), input layers stacked on the right.
    Timeline (15 s): 0.1-1.6 map + mill + pill · 1.5-3.5 four layers appear in place ·
-   4.5-5.3 bracket + friction tile + key · 6 friction tile outlined blue, layers dim, timer in ·
+   4.5-5.3 bracket + friction tile + key · 4.9-5.7 friction overlay on the map (real roads) · 6 friction tile outlined blue, layers dim, timer in ·
    6.3-9 spread grows from the mill, timer 0 -> 90 min · 9-11 real outline draws ·
-   11.5-12.5 shed turns green, timer out, caption. Nothing new after 12.5 s. */
+   11.5-12.5 shed turns green, friction overlay fades out, timer out, caption. Nothing new after 12.5 s. */
 
 .reveal .s24-wrap {
   position: absolute;
@@ -32,6 +32,15 @@
   fill: none; stroke: #0A1628; stroke-width: 3.5; stroke-linejoin: round;
   stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0;
 }
+
+/* Friction overlay on the map (real Overture roads): dark = slow off-road, pale = fast roads */
+.reveal .s24-fricmap { opacity: 0; }
+.reveal .s24-fric-tint { fill: #0A1628; fill-opacity: 0.62; }
+.reveal .s24-roads path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.reveal .s24-road-track { stroke: #E9E4D6; stroke-width: 0.6; stroke-opacity: 0.25; }
+.reveal .s24-road-minor { stroke: #E9E4D6; stroke-width: 0.6; stroke-opacity: 0.38; }
+.reveal .s24-road-mid { stroke: #F4F1EA; stroke-width: 1.4; stroke-opacity: 0.85; }
+.reveal .s24-road-major { stroke: #FFFFFF; stroke-width: 2.4; }
 
 /* Mill */
 .reveal .s24-mill, .reveal .s24-pulse { opacity: 0; }
@@ -87,6 +96,9 @@
   /* the friction surface feeds the spread */
   .s24-fric .s24-tile-edge { animation: s24-blue 0.5s ease-out 6s forwards; }
 
+  /* friction on the map: lands with the friction tile, eases back as the shed turns green */
+  .s24-fricmap { animation: s24-in 0.8s ease-out 4.9s both, s24-fric-back 0.8s ease-in-out 11.5s forwards; }
+
   /* spread: the real outline grows about the mill so every edge is reached at 90 min */
   .s24-spread { animation: s24-grow 2.7s linear 6.3s both, s24-out 0.8s ease-in-out 11.5s forwards; }
   .s24-front { animation: s24-grow-front 2.7s linear 6.3s both, s24-out 0.5s ease-in 10.4s forwards; }
@@ -104,6 +116,7 @@
 @keyframes s24-out { to { opacity: 0; } }
 @keyframes s24-on { from { opacity: 0; } to { opacity: 1; } }
 @keyframes s24-off { from { opacity: 1; } to { opacity: 0; } }
+@keyframes s24-fric-back { from { opacity: 1; } to { opacity: 0; } }
 @keyframes s24-dim { from { opacity: 1; } to { opacity: 0.6; } }
 @keyframes s24-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @keyframes s24-drop {

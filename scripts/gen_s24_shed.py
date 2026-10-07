@@ -3,15 +3,20 @@
 Writes slides/_gen/s24-shed.qmd: an inline SVG with the map card on the left
 (the real 90-minute palm supply shed for Binabaru mill, Kampar, Riau) and the
 input layers stacked on the right. Beats: mill (0-1.5 s) · four layers appear
-in place (1.5-3.5 s) · they combine into one friction tile (4.5-5 s) · spread
+in place (1.5-3.5 s) · they combine into one friction tile (4.5-5 s), and a
+friction overlay fades in on the map (4.9-5.7 s: dark tint over land = slow,
+real Overture roads in pale strokes = fast, styled by class) · spread
 from the mill with a 0 -> 90 min timer (6.3-9 s) · real outline draws (9-11 s)
-· shed turns green with caption (11.5-12.5 s). Timing via classes + inline --d
+· shed turns green with caption, friction overlay eases to 20% (11.5-12.5 s). Timing via classes + inline --d
 delays; keyframes live in styles/s24.scss.
 
     uv run --project scripts python scripts/gen_s24_shed.py
 
-Real: shed outline (largest part, 6,560 km2), mill point, 90-minute budget.
-Schematic: the four input-layer tiles and the friction tile (patterns only),
+Real: shed outline (largest part, 6,560 km2), mill point, 90-minute budget, and
+the roads in the map's friction overlay (Overture transportation/segment,
+release 2026-08-19.0, cached in images/src/s24-roads.json by gen_s24_roads.py).
+Schematic: the four input-layer tiles and the friction tile (patterns only), the
+overlay's uniform off-road tint (no slope / land cover / water rasters),
 and the spread animation, which grows the final outline about the mill so it
 reaches every edge at "90 min" (true 30/60-minute fronts were not computed).
 
@@ -30,7 +35,7 @@ import math
 from pathlib import Path
 
 from pyproj import Transformer
-from shapely.geometry import shape
+from shapely.geometry import LineString, box, shape
 from shapely.ops import transform, unary_union
 
 from gen_s07_array import CACHE as S07_CACHE
@@ -39,6 +44,7 @@ from gen_s07_array import MAP_H, MAP_W, path_d, xy
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "slides" / "_gen" / "s24-shed.qmd"
 CACHE = ROOT / "images" / "src" / "s24-geometry.json"
+ROADS = ROOT / "images" / "src" / "s24-roads.json"  # real Overture roads, from gen_s24_roads.py
 SHED_SRC = Path.home() / "epoch/data/sample-geojson/palm/shed.geojson"
 
 TO_UTM = Transformer.from_crs(4326, 32647, always_xy=True).transform
@@ -49,6 +55,37 @@ INK, MUTED, BLUE, BLUE_SOFT = "#0A1628", "#5B6878", "#376FD0", "#DCE7FB"
 # Timeline (s)
 T_LAYERS, T_FRIC = 1.5, 4.8
 T_SPREAD, SPREAD_DUR = 6.3, 2.7
+
+# Friction overlay on the map: dark tint over land (slow off-road) with the real
+# roads on top in pale strokes (fast), styled by class. Half-size in degrees.
+FRIC_HALF = 0.62
+ROAD_GROUPS = [  # (css suffix, classes) drawn bottom to top
+    ("track", ["track"]),
+    ("minor", ["residential", "unclassified"]),
+    ("mid", ["secondary", "tertiary"]),
+    ("major", ["motorway", "trunk", "primary"]),
+]
+
+
+def road_d(lines: list, tol_px: float = 0.45) -> tuple[str, int]:
+    """Compact relative SVG path for many polylines in lon/lat; returns (d, vertex count)."""
+    out, nv = [], 0
+    for ln in lines:
+        pts = LineString([xy(*c) for c in ln]).simplify(tol_px).coords
+        q = [(round(x * 10), round(y * 10)) for x, y in pts]  # 0.1 px grid
+        seg = [f"M{q[0][0] / 10:g},{q[0][1] / 10:g}"]
+        px, py = q[0]
+        steps = []
+        for x, y in q[1:]:
+            if (x, y) == (px, py):
+                continue
+            steps.append(f"{(x - px) / 10:g},{(y - py) / 10:g}")
+            px, py = x, y
+        if not steps:
+            continue
+        out.append(seg[0] + "l" + " ".join(steps))
+        nv += len(steps) + 1
+    return "".join(out).replace(" -", "-"), nv
 
 
 def shed_area_km2() -> float:
@@ -133,6 +170,30 @@ def build() -> str:
     a(f'<text class="s24-geo" x="{xy(98.15, -1.55)[0]:.0f}" y="{xy(98.15, -1.55)[1]:.0f}">Indian Ocean</text>')
     a(f'<text class="s24-geo s24-geo-land" x="{xy(100.62, -1.2)[0]:.0f}" y="{xy(100.62, -1.2)[1]:.0f}">SUMATRA</text>')
 
+    # Friction overlay (real roads, Overture 2026-08-19.0), under the spread
+    rj = json.loads(ROADS.read_text())
+    fx0, fy0 = xy(fac.x - FRIC_HALF, fac.y + FRIC_HALF)
+    fsz = 2 * FRIC_HALF * (xy(1, 0)[0] - xy(0, 0)[0])
+    land_near = land.intersection(box(fac.x - FRIC_HALF - 0.1, fac.y - FRIC_HALF - 0.1,
+                                      fac.x + FRIC_HALF + 0.1, fac.y + FRIC_HALF + 0.1))
+    a(f'<g class="s24-fricmap" mask="url(#s24-fricmask)" clip-path="url(#s24-landclip)">')
+    a(f'<rect class="s24-fric-tint" x="{fx0 - 20:.0f}" y="{fy0 - 20:.0f}" width="{fsz + 40:.0f}" height="{fsz + 40:.0f}"/>')
+    a('<g class="s24-roads">')
+    total = 0
+    for suf, classes in ROAD_GROUPS:
+        rd, nv = road_d([ln for c in classes for ln in rj["roads"].get(c, [])])
+        total += nv
+        a(f'<path class="s24-road-{suf}" d="{rd}"/>')
+    a('</g></g>')
+    print(f"roads: {total} vertices")
+    defs_extra = (
+        f'<clipPath id="s24-landclip"><path d="{path_d(land_near)}"/></clipPath>'
+        f'<filter id="s24-soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="16"/></filter>'
+        f'<mask id="s24-fricmask" maskUnits="userSpaceOnUse" x="0" y="0" width="{MAP_W}" height="{MAP_H}">'
+        f'<rect x="{fx0 + 14:.0f}" y="{fy0 + 14:.0f}" width="{fsz - 28:.0f}" height="{fsz - 28:.0f}" rx="36" '
+        f'fill="#fff" filter="url(#s24-soft)"/></mask>'
+    )
+
     # Spread (blue, grows from the mill), final fill, outline
     org = f"transform-origin:{fx:.1f}px {fy:.1f}px"
     a(f'<path class="s24-spread" style="{org}" d="{d}"/>')
@@ -207,6 +268,7 @@ def build() -> str:
     a(f'<text class="s24-key" x="{TX}" y="{fy0 + TH + 40}">pale = fast · dark = slow</text>')
     a('</g>')
     a('</svg></div>')
+    s[s.index('</defs>')] = defs_extra + '</defs>'
     return "\n".join(s)
 
 
