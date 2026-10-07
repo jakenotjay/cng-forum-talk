@@ -79,8 +79,6 @@ title-slide-attributes:
 
 {{< include slides/_02-visibility.qmd >}}
 
-{{< include slides/_03-wwf.qmd >}}
-
 {{< include slides/_04-trace.qmd >}}
 
 {{< include slides/_05-process.qmd >}}
