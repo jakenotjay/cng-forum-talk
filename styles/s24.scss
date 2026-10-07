@@ -22,7 +22,7 @@
 .reveal .s24-geo { font-size: 22px; fill: #376FD0; opacity: 0.55; font-style: italic; }
 .reveal .s24-geo-land { fill: #5B6878; font-style: normal; letter-spacing: 0.3em; font-weight: 500; opacity: 0.5; }
 
-.reveal .s24-spread { fill: #376FD0; fill-opacity: 0.3; fill-rule: evenodd; transform-box: view-box; transform: scale(0); }
+.reveal .s24-spread { fill: #8EB2F2; fill-opacity: 0.78; fill-rule: evenodd; transform-box: view-box; transform: scale(0); }
 .reveal .s24-front {
   fill: none; stroke: #376FD0; stroke-width: 3; stroke-linejoin: round;
   vector-effect: non-scaling-stroke; transform-box: view-box; transform: scale(0); opacity: 0;
@@ -97,7 +97,8 @@
   .s24-fric .s24-tile-edge { animation: s24-blue 0.5s ease-out 6s forwards; }
 
   /* friction on the map: lands with the friction tile, eases back as the shed turns green */
-  .s24-fricmap { animation: s24-in 0.8s ease-out 4.9s both, s24-fric-back 0.8s ease-in-out 11.5s forwards; }
+  /* lands with the friction tile, steps back as the spread starts so the spread reads clearly, then clears */
+  .s24-fricmap { animation: s24-in 0.8s ease-out 4.9s both, s24-fric-dim 0.6s ease-out 6.1s forwards, s24-fric-back 0.8s ease-in-out 11.5s forwards; }
 
   /* spread: the real outline grows about the mill so every edge is reached at 90 min */
   .s24-spread { animation: s24-grow 2.7s linear 6.3s both, s24-out 0.8s ease-in-out 11.5s forwards; }
@@ -116,7 +117,8 @@
 @keyframes s24-out { to { opacity: 0; } }
 @keyframes s24-on { from { opacity: 0; } to { opacity: 1; } }
 @keyframes s24-off { from { opacity: 1; } to { opacity: 0; } }
-@keyframes s24-fric-back { from { opacity: 1; } to { opacity: 0; } }
+@keyframes s24-fric-dim { from { opacity: 1; } to { opacity: 0.55; } }
+@keyframes s24-fric-back { from { opacity: 0.55; } to { opacity: 0; } }
 @keyframes s24-dim { from { opacity: 1; } to { opacity: 0.6; } }
 @keyframes s24-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @keyframes s24-drop {
