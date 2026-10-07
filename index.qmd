@@ -105,6 +105,8 @@ title-slide-attributes:
 
 {{< include slides/_16-open-data.qmd >}}
 
+{{< include slides/_18-results.qmd >}}
+
 {{< include slides/_17-ee-hours.qmd >}}
 
 {{< include slides/_21-ai-metaskill.qmd >}}

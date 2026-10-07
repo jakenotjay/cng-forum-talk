@@ -1,33 +1,41 @@
 /*-- scss:rules --*/
 /* Slide 18 (results): classes prefixed .s18- */
-/* Four stat tiles, no visible headline. Tiles rise at 1, 4.5, 8 and 11 s (.a-rise --d). */
-
-.reveal .slides section#slide-18 > h2 { display: none; }
+/* Headline + three stat rows (value left, label right). Rows rise at 1, 4.5 and 8 s (.a-rise --d).
+   EE cost is left to the spend chart on the next slide. */
 
 .reveal .s18-grid {
   position: absolute;
   left: 0;
-  top: 50px;
-  width: 1600px;
-  height: 790px;
+  top: 170px;
+  width: 1440px;
+  height: 640px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 28px;
 }
 
 .reveal .stat.s18-tile {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 56px;
+  align-items: center;
+  padding: 0 48px 0 60px;
   border-radius: 24px;
-  box-shadow: inset 0 12px 0 #376FD0, 0 6px 24px rgba(10, 22, 40, 0.08);
-  padding-top: 12px;
+  box-shadow: inset 12px 0 0 #376FD0, 0 6px 24px rgba(10, 22, 40, 0.08);
 }
 .reveal .stat.s18-tile p { margin: 0; }
+/* Quarto wraps the three spans in one <p>: lay that out as value | label over sub */
+.reveal .stat.s18-tile > p {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 40px;
+  align-items: center;
+  width: 100%;
+}
 .reveal .stat.s18-tile .stat-value {
-  font-size: 168px;
+  grid-row: 1 / span 2;
+  align-self: center;
+  font-size: 120px;
   line-height: 1;
   letter-spacing: -0.03em;
   color: #376FD0;
@@ -35,16 +43,20 @@
 .reveal .s18-tile .s18-down { color: #3FB557; }
 .reveal .s18-tile .s18-label {
   display: block;
-  margin-top: 14px;
-  font-size: 44px;
+  align-self: end;
+  margin-top: 0;
+  font-size: 52px;
   font-weight: 500;
   line-height: 1.15;
   color: #0A1628;
 }
 .reveal .s18-tile .s18-sub {
   display: block;
+  align-self: start;
   margin-top: 6px;
-  font-size: 30px;
+  font-size: 32px;
   line-height: 1.2;
   color: #5B6878;
 }
+/* A row with no subline: centre its label vertically */
+.reveal .stat.s18-tile > p:not(:has(.s18-sub)) .s18-label { grid-row: 1 / span 2; align-self: center; }

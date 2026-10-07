@@ -1,4 +1,4 @@
-## Slide 18 {#slide-18 .hide-title}
+## What we gained {#slide-18}
 
 ::: {.s18-grid}
 ::: {.stat .s18-tile .a-rise style="--d:1s"}
@@ -18,12 +18,8 @@
 [under load]{.s18-label}
 :::
 
-::: {.stat .s18-tile .a-rise style="--d:11s"}
-[Costs [↓]{.s18-down}]{.stat-value}
-[on Earth Engine]{.s18-label}
-:::
 :::
 
 ::: notes
-Any given job now takes about half the time on the same compute. We've load tested up to 64 concurrent jobs, up from four, we're far more stable under load, and our Earth Engine costs are a fraction of what they were.
+Leaving Earth Engine paid off well beyond the bill. Any given job now takes about half the time on the same compute, we've load tested up to sixty-four concurrent jobs, up from four, and we're far more stable under load.
 :::
