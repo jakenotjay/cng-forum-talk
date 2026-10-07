@@ -1,6 +1,6 @@
 /*-- scss:rules --*/
 /* Slide 7 (global-array): classes prefixed .s07-
-   Timeline (15 s): 0-3 earlier chunks · 3-5.6 shed draws (label out 5.6-6) · 6-9 present/missing marked ·
+   Timeline (15 s): shed + mill visible from 0 s (it was drawn on the previous slide) · 0-3 earlier chunks · 6-9 present/missing marked ·
    9-12 missing chunks fill · 12-13.2 commit sweep across data + metaarray. */
 
 .reveal .s07-wrap {
@@ -24,13 +24,14 @@
 .reveal .s07-filled { fill: #57D16F; fill-opacity: 0.62; stroke: #3FB557; stroke-width: 3; }
 .reveal .s07-empty { fill: url(#s07-hatch); fill-opacity: 0.85; stroke: #8C97A6; stroke-width: 2; }
 
-.reveal .s07-shed-fill { fill: #0A1628; fill-opacity: 0.1; opacity: 0; }
+.reveal .s07-shed-fill { fill: #0A1628; fill-opacity: 0.1; }
+/* The shed was drawn on the previous slide, so it is already here at 0 s */
 .reveal .s07-shed {
   fill: none; stroke: #0A1628; stroke-width: 4; stroke-linejoin: round;
-  stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0;
 }
 
-.reveal .s07-fac, .reveal .s07-shed-label, .reveal .s07-count { opacity: 0; }
+.reveal .s07-count { opacity: 0; }
+.reveal .s07-shed-label { display: none; }
 .reveal .s07-shed-label rect { fill: #0A1628; }
 .reveal .s07-shed-label text { fill: #fff; font-size: 24px; font-weight: 500; }
 .reveal .s07-count text { font-size: 23px; font-weight: 500; fill: #23863A; }
@@ -74,12 +75,6 @@
   .s07-beat-first { animation: s07-in 0.5s ease-out 0.2s both, s07-out 0.35s ease-in var(--d2) forwards; }
   .s07-beat-last { animation: s07-in 0.35s ease-out var(--d) both; }
 
-  .s07-shed { animation: s07-draw 2.6s ease-in-out 3s both; }
-  .s07-fac { animation: s07-in 0.4s ease-out 3s both; }
-  .s07-shed-fill { animation: s07-in 0.6s ease-out 5.5s both; }
-  /* label fades as soon as the outline has finished drawing (3 s + 2.6 s), so it
-     never sits over the chunk marks that appear from 6 s */
-  .s07-shed-label { animation: s07-in 0.5s ease-out 3.6s both, s07-out 0.4s ease-in 5.6s forwards; }
 
   .s07-mark { animation: s07-pop 0.4s cubic-bezier(0.2, 0.7, 0.2, 1.3) var(--d) both, s07-out 0.4s ease-in var(--d2) forwards; }
   .s07-mark { transform-box: fill-box; transform-origin: center; }

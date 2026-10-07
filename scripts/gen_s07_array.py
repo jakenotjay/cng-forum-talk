@@ -195,7 +195,7 @@ def build() -> str:
     # ---- Narration line under the map ----
     beats = [
         (0.0, 3.0, "Earlier sheds already filled some chunks"),
-        (3.0, 6.0, "A new supply shed arrives"),
+        (3.0, 6.0, "Our supply shed spans nine chunks"),
         (6.0, 9.0, "Which of its chunks exist already?"),
         (9.0, 12.0, "Fill only the missing ones"),
         (12.0, None, "Write data and metaarray in one commit"),
