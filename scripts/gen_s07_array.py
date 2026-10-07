@@ -108,10 +108,10 @@ def build() -> str:
     assert set(missing) == set(NEW_RESULT), (missing, NEW_RESULT)
 
     # Beat timings (seconds into the 15 s slide)
-    t_mark = {rc: 6.2 + 0.18 * i for i, rc in enumerate(sorted(hits))}
-    t_fill = {rc: 9.1 + 0.42 * i for i, rc in enumerate(sorted(missing))}
-    t_out = 11.7
-    t_sweep, sweep_dur = 12.0, 1.4
+    t_mark = {rc: 3.0 + 0.18 * i for i, rc in enumerate(sorted(hits))}
+    t_fill = {rc: 6.2 + 0.42 * i for i, rc in enumerate(sorted(missing))}
+    t_out = 8.9
+    t_sweep, sweep_dur = 9.6, 1.4
 
     s = []
     a = s.append
@@ -146,7 +146,7 @@ def build() -> str:
     # Earlier state
     for (r, c), st in EARLIER.items():
         cls = "s07-filled" if st == "F" else "s07-empty"
-        a(f'<rect class="{cls}" x="{c * CELL}" y="{r * CELL}" width="{CELL}" height="{CELL}"/>')
+        a(f'<rect class="{cls} s07-early" x="{c * CELL}" y="{r * CELL}" width="{CELL}" height="{CELL}"/>')
 
     # Shed fill + outline (draws on 3-6 s)
     d = path_d(shed)
@@ -164,7 +164,7 @@ def build() -> str:
         grid.append(f"M{c * CELL},0V{MAP_H}")
     for r in range(ROWS + 1):
         grid.append(f"M0,{r * CELL}H{MAP_W}")
-    a(f'<path class="s07-grid" d="{"".join(grid)}"/>')
+    a(f'<path class="s07-grid s07-early" d="{"".join(grid)}"/>')
 
     # Intersect marks (6-9 s)
     for rc in hits:
@@ -185,7 +185,7 @@ def build() -> str:
 
     # Count chips (6-9 s)
     cx0, cy0 = xy(99.53, 0.36)
-    a(f'<g class="s07-count" style="--d:7.6s">'
+    a(f'<g class="s07-count" style="--d:4.4s">'
       f'<rect x="{cx0:.0f}" y="{cy0 - 34:.0f}" width="150" height="46" rx="23" fill="#fff" stroke="{GREEN}" stroke-width="3"/>'
       f'<text x="{cx0 + 75:.0f}" y="{cy0 - 3:.0f}" text-anchor="middle">{len(present)} present</text>'
       f'<rect x="{cx0:.0f}" y="{cy0 + 22:.0f}" width="150" height="46" rx="23" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="3" stroke-dasharray="8 5"/>'
@@ -194,11 +194,10 @@ def build() -> str:
 
     # ---- Narration line under the map ----
     beats = [
-        (0.0, 3.0, "Earlier sheds already filled some chunks"),
-        (3.0, 6.0, "Our supply shed spans nine chunks"),
-        (6.0, 9.0, "Which of its chunks exist already?"),
-        (9.0, 12.0, "Fill only the missing ones"),
-        (12.0, None, "Write data and metaarray in one commit"),
+        (0.6, 3.0, "Earlier sheds already stored some chunks"),
+        (3.0, 6.2, "Which of its chunks exist already?"),
+        (6.2, 9.6, "Fill only the missing ones"),
+        (9.6, None, "Write data and metaarray in one commit"),
     ]
     for i, (t0, t1, text) in enumerate(beats):
         style = f"--d:{t0:.1f}s" + (f";--d2:{t1 - 0.35:.2f}s" if t1 else "")
