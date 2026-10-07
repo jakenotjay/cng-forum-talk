@@ -15,10 +15,14 @@ Schematic: the four input-layer tiles and the friction tile (patterns only),
 and the spread animation, which grows the final outline about the mill so it
 reaches every edge at "90 min" (true 30/60-minute fronts were not computed).
 
-Geometry sources (local, not committed):
-  ~/epoch/data/sample-geojson/palm/shed.geojson     real 90-minute palm shed
-  ~/epoch/data/sample-geojson/palm/facility.geojson the mill point
-Cached in images/src/s24-geometry.json so the slide regenerates without them.
+Basemap: identical to the next slide (gen_s07_array.py): same card, extent
+(98-104 E, 2 S-2 N), projection, GADM Sumatra land, sea tint and labels, and the
+same simplified shed and mill geometry, so the map does not move on the cut.
+That geometry is read from slide 8's cache (images/src/s07-geometry.json).
+
+The caption's area is the real largest part of the shed, measured in UTM 47N
+from ~/epoch/data/sample-geojson/palm/shed.geojson and cached in
+images/src/s24-geometry.json.
 """
 
 import json
@@ -26,62 +30,36 @@ import math
 from pathlib import Path
 
 from pyproj import Transformer
-from shapely.geometry import Polygon, mapping, shape
+from shapely.geometry import shape
 from shapely.ops import transform, unary_union
+
+from gen_s07_array import CACHE as S07_CACHE
+from gen_s07_array import MAP_H, MAP_W, path_d, xy
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "slides" / "_gen" / "s24-shed.qmd"
 CACHE = ROOT / "images" / "src" / "s24-geometry.json"
-HOME = Path.home()
-SHED_SRC = HOME / "epoch/data/sample-geojson/palm/shed.geojson"
-FAC_SRC = HOME / "epoch/data/sample-geojson/palm/facility.geojson"
+SHED_SRC = Path.home() / "epoch/data/sample-geojson/palm/shed.geojson"
 
 TO_UTM = Transformer.from_crs(4326, 32647, always_xy=True).transform
-
-# Map card: equirectangular (cos(0.2 deg) ~ 1), shed bbox centred.
-MAP_W, MAP_H = 960, 640  # same card as the next slide (global array)
 COL_X = 1012  # right column: input layers
-PX = 500.0  # px per degree
-KM = PX / 111.32  # px per km at the equator
-SHED_C = (101.2397, 0.1635)  # shed bbox centre
-LON0 = SHED_C[0] - MAP_W / 2 / PX
-LAT1 = SHED_C[1] + MAP_H / 2 / PX
 
 INK, MUTED, BLUE, BLUE_SOFT = "#0A1628", "#5B6878", "#376FD0", "#DCE7FB"
-GREEN, GREEN_SOFT, LINE = "#3FB557", "#57D16F", "#C9CFD8"
 
 # Timeline (s)
 T_LAYERS, T_FRIC = 1.5, 4.8
 T_SPREAD, SPREAD_DUR = 6.3, 2.7
 
 
-def load_geometry() -> dict:
-    if SHED_SRC.exists() and FAC_SRC.exists():
+def shed_area_km2() -> float:
+    """Area of the real shed's largest part (UTM 47N), cached."""
+    if SHED_SRC.exists():
         raw = unary_union([shape(f["geometry"]) for f in json.loads(SHED_SRC.read_text())["features"]])
         main = max(getattr(raw, "geoms", [raw]), key=lambda g: g.area)
-        area_km2 = transform(TO_UTM, main).area / 1e6
-        # Drop holes under 2 km2 and the 30 slivers; light smoothing of the 100 m stairs.
-        holes = [h for h in main.interiors if transform(TO_UTM, Polygon(h)).area > 2e6]
-        shed = Polygon(main.exterior, holes).simplify(0.003)
-        fac = shape(json.loads(FAC_SRC.read_text())["features"][0]["geometry"])
-        assert shed.contains(fac), "mill must sit inside the simplified shed"
-        data = {"shed": mapping(shed), "facility": mapping(fac), "area_km2": round(area_km2, 1)}
-        CACHE.write_text(json.dumps(data))
-        return data
-    return json.loads(CACHE.read_text())
-
-
-def xy(lon: float, lat: float) -> tuple[float, float]:
-    return (lon - LON0) * PX, (LAT1 - lat) * PX
-
-
-def path_d(geom) -> str:
-    out = []
-    for p in getattr(geom, "geoms", [geom]):
-        for ring in [p.exterior, *p.interiors]:
-            pts = [xy(*c[:2]) for c in ring.coords]
-            out.append("M" + "L".join(f"{x:.1f},{y:.1f}" for x, y in pts) + "Z")
-    return "".join(out)
+        area = round(transform(TO_UTM, main).area / 1e6, 1)
+        CACHE.write_text(json.dumps({"area_km2": area}))
+        return area
+    return json.loads(CACHE.read_text())["area_km2"]
 
 
 def tile_pattern(kind: str, w: float, h: float) -> str:
@@ -124,12 +102,15 @@ def tile_pattern(kind: str, w: float, h: float) -> str:
 
 
 def build() -> str:
-    g = load_geometry()
-    shed = shape(g["shed"])
+    g = json.loads(S07_CACHE.read_text())  # slide 8's basemap, shed and mill
+    shed, land = shape(g["shed"]), shape(g["land"])
     fac = shape(g["facility"])
     fx, fy = xy(*fac.coords[0])
     d = path_d(shed)
-    print(f"area {g['area_km2']} km2")
+    area = shed_area_km2()
+    print(f"area {area} km2")
+    x_w, _ = xy(shed.bounds[0], shed.bounds[3])
+    x_e, _ = xy(shed.bounds[2], shed.bounds[1])
 
     s = []
     a = s.append
@@ -142,10 +123,15 @@ def build() -> str:
     a(f'<clipPath id="s24-mapclip"><rect width="{MAP_W}" height="{MAP_H}" rx="18"/></clipPath>')
     a('</defs>')
 
-    # ---------------- Map card (left) ----------------
+    # ---------------- Map card (left): slide 8's basemap ----------------
     a('<g class="s24-map">')
+    a(f'<rect class="s24-card" width="{MAP_W}" height="{MAP_H}" rx="18"/>')
     a('<g clip-path="url(#s24-mapclip)">')
-    a(f'<rect class="s24-land" width="{MAP_W}" height="{MAP_H}"/>')
+    a(f'<rect width="{MAP_W}" height="{MAP_H}" fill="{BLUE_SOFT}" opacity="0.45"/>')
+    a(f'<path class="s24-land" d="{path_d(land)}"/>')
+    a(f'<text class="s24-geo" x="{xy(102.55, 1.72)[0]:.0f}" y="{xy(102.55, 1.72)[1]:.0f}">Strait of Malacca</text>')
+    a(f'<text class="s24-geo" x="{xy(98.15, -1.55)[0]:.0f}" y="{xy(98.15, -1.55)[1]:.0f}">Indian Ocean</text>')
+    a(f'<text class="s24-geo s24-geo-land" x="{xy(100.62, -1.2)[0]:.0f}" y="{xy(100.62, -1.2)[1]:.0f}">SUMATRA</text>')
 
     # Spread (blue, grows from the mill), final fill, outline
     org = f"transform-origin:{fx:.1f}px {fy:.1f}px"
@@ -153,37 +139,34 @@ def build() -> str:
     a(f'<path class="s24-front" style="{org}" d="{d}"/>')
     a(f'<path class="s24-final" d="{d}"/>')
     a(f'<path class="s24-outline" d="{d}" pathLength="1"/>')
-
-    # Scale bar
-    sb = 20 * KM
-    a(f'<g class="s24-scale"><path d="M28,{MAP_H - 44}v10H{28 + sb:.1f}v-10"/>'
-      f'<text x="{28 + sb + 12:.1f}" y="{MAP_H - 28}">20 km</text></g>')
     a('</g>')
     a(f'<rect class="s24-card-edge" width="{MAP_W}" height="{MAP_H}" rx="18"/>')
 
-    # Mill, pill, timer
+    # Mill pill sits clear of the shed (west), with a short leader to the dot
+    lw = 236
+    x0 = x_w - 20 - lw
+    a(f'<g class="s24-mill-l"><path class="s24-leader" d="M{x0 + lw:.0f},{fy:.1f}H{fx - 12:.1f}"/>'
+      f'<rect x="{x0:.0f}" y="{fy - 23:.0f}" width="{lw}" height="46" rx="23"/>'
+      f'<text x="{x0 + lw / 2:.0f}" y="{fy + 8:.0f}" text-anchor="middle">Binabaru mill, Riau</text></g>')
     a(f'<circle class="s24-pulse" cx="{fx:.1f}" cy="{fy:.1f}" r="10" style="transform-origin:{fx:.1f}px {fy:.1f}px"/>')
     a(f'<g class="s24-mill" style="transform-origin:{fx:.1f}px {fy:.1f}px">'
       f'<circle cx="{fx:.1f}" cy="{fy:.1f}" r="10" fill="{BLUE}" stroke="#fff" stroke-width="4"/></g>')
-    lw = 236
-    x0 = fx - 24 - lw
-    a(f'<g class="s24-mill-l"><rect x="{x0:.0f}" y="{fy - 23:.0f}" width="{lw}" height="46" rx="23"/>'
-      f'<text x="{x0 + lw / 2:.0f}" y="{fy + 8:.0f}" text-anchor="middle">Binabaru mill, Riau</text></g>')
-    # timer above the mill: 0 -> 90 min in 10-minute steps, synced with the spread
+    # Timer clear of the shed (east): 0 -> 90 min in 10-minute steps, synced with the spread
     tw = 132
-    a(f'<g class="s24-timer"><rect x="{fx - tw / 2:.0f}" y="{fy - 76:.0f}" width="{tw}" height="44" rx="22"/>')
+    tx0 = x_e + 20
+    a(f'<g class="s24-timer"><rect x="{tx0:.0f}" y="{fy - 22:.0f}" width="{tw}" height="44" rx="22"/>')
     for m in range(0, 100, 10):
         t0 = T_SPREAD + SPREAD_DUR * m / 90
         t1 = T_SPREAD + SPREAD_DUR * (m + 10) / 90
         cls = "s24-tick" + (" s24-tick-last" if m == 90 else "")
-        a(f'<text class="{cls}" style="--d:{t0:.2f}s;--d2:{t1:.2f}s" x="{fx:.0f}" y="{fy - 45:.0f}" '
+        a(f'<text class="{cls}" style="--d:{t0:.2f}s;--d2:{t1:.2f}s" x="{tx0 + tw / 2:.0f}" y="{fy + 9:.0f}" '
           f'text-anchor="middle">{m} min</text>')
     a('</g>')
 
     # Caption under the map (final)
     cy = MAP_H + 46
     a(f'<g class="s24-caption"><rect x="2" y="{cy - 24}" width="30" height="30" rx="5"/>'
-      f'<text x="46" y="{cy}"><tspan class="s24-cap-b">Supply shed</tspan> · 90 min · {round(g["area_km2"], -1):,.0f} km²</text></g>')
+      f'<text x="46" y="{cy}"><tspan class="s24-cap-b">Supply shed</tspan> · 90 min · {round(area, -1):,.0f} km²</text></g>')
     a('</g>')
 
     # ---------------- Input layers (right, schematic) ----------------

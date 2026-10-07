@@ -1,6 +1,6 @@
 /*-- scss:rules --*/
 /* Slide file 24 (deck position 7, supply shed): classes prefixed .s24-
-   Layout: map card left (same card as the next slide), input layers stacked on the right.
+   Layout: map card left (same card, extent and basemap as the next slide), input layers stacked on the right.
    Timeline (15 s): 0.1-1.6 map + mill + pill · 1.5-3.5 four layers appear in place ·
    4.5-5.3 bracket + friction tile + key · 6 friction tile outlined blue, layers dim, timer in ·
    6.3-9 spread grows from the mill, timer 0 -> 90 min · 9-11 real outline draws ·
@@ -15,11 +15,12 @@
 .reveal .s24-svg { display: block; width: 100%; height: auto; overflow: visible; }
 .reveal .s24-svg text { font-family: 'Google Sans', 'Google Sans Text', system-ui, sans-serif; }
 
-/* Map */
-.reveal .s24-land { fill: #E9E4D6; }
+/* Map: the same basemap as the next slide (.s07- card, land, sea, labels) */
+.reveal .s24-card { fill: #fff; }
 .reveal .s24-card-edge { fill: none; stroke: #C9CFD8; stroke-width: 2; }
-.reveal .s24-scale path { fill: none; stroke: #5B6878; stroke-width: 2.5; }
-.reveal .s24-scale text { font-size: 22px; fill: #5B6878; }
+.reveal .s24-land { fill: #E9E4D6; stroke: #CBC2AE; stroke-width: 1.2; stroke-linejoin: round; }
+.reveal .s24-geo { font-size: 22px; fill: #376FD0; opacity: 0.55; font-style: italic; }
+.reveal .s24-geo-land { fill: #5B6878; font-style: normal; letter-spacing: 0.3em; font-weight: 500; opacity: 0.5; }
 
 .reveal .s24-spread { fill: #376FD0; fill-opacity: 0.3; fill-rule: evenodd; transform-box: view-box; transform: scale(0); }
 .reveal .s24-front {
@@ -38,6 +39,7 @@
 .reveal .s24-mill { transform-box: view-box; }
 .reveal .s24-mill-l { opacity: 0; }
 .reveal .s24-mill-l rect { fill: #0A1628; }
+.reveal .s24-leader { fill: none; stroke: #0A1628; stroke-width: 2.5; }
 .reveal .s24-mill-l text { fill: #fff; font-size: 24px; font-weight: 500; }
 .reveal .s24-timer { opacity: 0; }
 .reveal .s24-timer rect { fill: #0A1628; }
