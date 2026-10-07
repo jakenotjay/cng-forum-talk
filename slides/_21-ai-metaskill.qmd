@@ -1,4 +1,4 @@
-## A skill, not a script {#slide-21}
+## A skill, not a script {#slide-18}
 
 ```{=html}
 <div class="s21-wrap">

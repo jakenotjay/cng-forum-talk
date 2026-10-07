@@ -1,4 +1,4 @@
-## One prompt to a registered source {#slide-22}
+## One prompt to a registered source {#slide-19}
 
 ```{=html}
 <div class="s22-wrap">

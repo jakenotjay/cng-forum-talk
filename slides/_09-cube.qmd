@@ -1,4 +1,4 @@
-## The solution: VirtualiZarr {#slide-09}
+## The solution: VirtualiZarr {#slide-09 .s09-slide}
 
 ::: s09-stage
 ```{=html}

@@ -9,4 +9,5 @@ for _ in $(seq 1 600); do
   sleep 1
 done
 trap 'rmdir "$lock"' EXIT
+python3 scripts/renumber.py
 uv run quarto render index.qmd "$@"

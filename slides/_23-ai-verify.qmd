@@ -1,4 +1,4 @@
-## Pixel-perfect against Earth Engine {#slide-23}
+## Pixel-perfect against Earth Engine {#slide-20}
 
 ```{=html}
 <div class="s23-wrap">

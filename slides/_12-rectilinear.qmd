@@ -1,4 +1,4 @@
-## Ragged tiles ≠ one array {#slide-12}
+## Ragged tiles ≠ one array {#slide-11}
 
 ::: {.s12-wrap}
 ::: {.s12-left}

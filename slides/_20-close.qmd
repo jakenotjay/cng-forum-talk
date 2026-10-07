@@ -1,4 +1,4 @@
-## Come and chat {#slide-20 data-autoslide="0" data-state="no-bars"}
+## Come and chat {#slide-end data-autoslide="0" data-state="no-bars"}
 
 ::: {.s20-layout}
 ::: {.s20-who}

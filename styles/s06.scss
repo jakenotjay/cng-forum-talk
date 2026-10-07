@@ -3,7 +3,7 @@
    SVG: slides/_gen/pipeline-s06.qmd (scripts/gen_pipeline.py). Each element
    carries --i (draw order); the pipeline draws left to right over 0-4 s,
    then at ~9 s "export to icechunk" glows and the later jobs mute. */
-.reveal .slides section#slide-06 .s06-wrap {
+.reveal .slides section.s06-slide .s06-wrap {
   position: absolute; left: 0; right: 0; top: 222px;
 }
 

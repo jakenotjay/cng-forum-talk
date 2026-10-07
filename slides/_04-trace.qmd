@@ -1,4 +1,4 @@
-## TRACE: from the brand down to the facility {#slide-04}
+## TRACE: from the brand down to the facility {#slide-03}
 
 ::: {.s04-wrap}
 {{< include slides/_gen/s04-trace.qmd >}}

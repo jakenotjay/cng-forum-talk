@@ -1,4 +1,4 @@
-## One protocol: open(geobox, dates) → xarray {#slide-14}
+## One protocol: open(geobox, dates) → xarray {#slide-13}
 
 ::: {.s14-wrap}
 

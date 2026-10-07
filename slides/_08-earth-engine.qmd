@@ -1,4 +1,4 @@
-## Earth Engine: 500 requests, 4 facilities {#slide-08}
+## Earth Engine: 500 requests, 4 facilities {#slide-08 .s08-slide}
 
 ::: {.s08-top .svg-fill}
 {{< include slides/_gen/pipeline-s08.qmd >}}

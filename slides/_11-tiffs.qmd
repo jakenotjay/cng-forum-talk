@@ -1,4 +1,4 @@
-## TIFFs, though {#slide-11}
+## TIFFs, though {#slide-10}
 
 ::: {.s11-wrap}
 {{< include slides/_gen/s11-panels.qmd >}}

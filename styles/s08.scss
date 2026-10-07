@@ -3,15 +3,15 @@
    Top: compact pipeline (slides/_gen/pipeline-s08.qmd), GEE turns red at 0.5 s.
    Main: HVE pipe feeding four facility lanes, queue grows 1.6-9.6 s
    (slides/_gen/s08-hve.qmd). Limits list at 6, 8, 10, 12 s. */
-.reveal .slides section#slide-08 .s08-top {
+.reveal .slides section.s08-slide .s08-top {
   position: absolute; left: 0; right: 0; top: 118px;
 }
-.reveal .slides section#slide-08 .s08-main {
+.reveal .slides section.s08-slide .s08-main {
   position: absolute; left: 0; right: 0; top: 388px; bottom: 30px;
   display: flex; align-items: center; gap: 56px;
 }
-.reveal .slides section#slide-08 .s08-diagram { flex: 0 0 940px; }
-.reveal .slides section#slide-08 .s08-limits { flex: 1 1 auto; }
+.reveal .slides section.s08-slide .s08-diagram { flex: 0 0 940px; }
+.reveal .slides section.s08-slide .s08-limits { flex: 1 1 auto; }
 
 /* top strip: everything but the source steps back, GEE turns red */
 .reveal .slides section.present .s08-pl :is(.s08-node:not(.s08-src), .s08-arrow, .s08-group, .s08-link:not(.s08-link-src-export)) {
@@ -56,16 +56,16 @@
 @keyframes s08-fade { from { opacity: 0; } to { opacity: 1; } }
 
 /* limits */
-.reveal .slides section#slide-08 .s08-limits ul {
+.reveal .slides section.s08-slide .s08-limits ul {
   list-style: none; margin: 0; padding: 0;
 }
-.reveal .slides section#slide-08 .s08-limits li {
+.reveal .slides section.s08-slide .s08-limits li {
   position: relative; margin: 0 0 0.75em; padding-left: 1.15em;
   font-size: 36px; line-height: 1.2; font-weight: 500; color: var(--epoch-red);
 }
-.reveal .slides section#slide-08 .s08-limits li > span { display: inline-block; position: relative; }
+.reveal .slides section.s08-slide .s08-limits li > span { display: inline-block; position: relative; }
 /* the dot rides on the span so it appears with its line */
-.reveal .slides section#slide-08 .s08-limits li > span::before {
+.reveal .slides section.s08-slide .s08-limits li > span::before {
   content: ""; position: absolute; left: -1.15em; top: 0.38em;
   width: 0.5em; height: 0.5em; border-radius: 50%; background: var(--epoch-red);
 }

@@ -7,14 +7,14 @@
    5-7 s     pipeline draws left to right, source GEE in red ("before")
    8-9.5 s   source cross-fades to virtual icechunk · refs in GCS (green, "after")
    10.5 s    caption beneath the source: references live with us, bytes stay put */
-.reveal .slides section#slide-09 .s09-stage { position: absolute; inset: 0; }
+.reveal .slides section.s09-slide .s09-stage { position: absolute; inset: 0; }
 
-.reveal .slides section#slide-09 img.s09-gif {
+.reveal .slides section.s09-slide img.s09-gif {
   position: absolute; left: 230px; top: 190px; width: 1140px; height: 639px;
   max-width: none; max-height: none; margin: 0; object-fit: cover;
   border-radius: 16px; box-shadow: 0 6px 24px rgba(10, 22, 40, 0.10);
 }
-.reveal .slides section.present#slide-09 img.s09-gif {
+.reveal .slides section.present.s09-slide img.s09-gif {
   animation: s09-gif-out 0.8s ease 5s forwards;
 }
 @keyframes s09-gif-out {
@@ -24,10 +24,10 @@
 }
 
 /* same placement as slide 6 */
-.reveal .slides section#slide-09 .s09-pipe {
+.reveal .slides section.s09-slide .s09-pipe {
   position: absolute; left: 0; right: 0; top: 222px;
 }
-.reveal .slides section#slide-09 .s09-pl { overflow: visible; }
+.reveal .slides section.s09-slide .s09-pl { overflow: visible; }
 
 /* hidden until the slide is present */
 .reveal .slides section .s09-pl :is(.s09-node, .s09-arrow, .s09-group, .s09-chip, .s09-caption) { opacity: 0; }
