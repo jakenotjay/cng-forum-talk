@@ -1,4 +1,4 @@
-## Computed on demand, per supply shed {#slide-05 .s06-slide}
+## Computed on demand, per supply shed {#slide-07 .s06-slide}
 
 ::: {.s06-wrap .svg-fill}
 {{< include slides/_gen/pipeline-s06.qmd >}}

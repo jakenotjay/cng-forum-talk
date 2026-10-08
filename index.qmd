@@ -83,11 +83,11 @@ title-slide-attributes:
 
 {{< include slides/_05-process.qmd >}}
 
-{{< include slides/_06-pipeline.qmd >}}
-
 {{< include slides/_24-supply-shed.qmd >}}
 
 {{< include slides/_07-global-array.qmd >}}
+
+{{< include slides/_06-pipeline.qmd >}}
 
 {{< include slides/_08-earth-engine.qmd >}}
 
