@@ -20,6 +20,13 @@
 
 :::
 
+```{=html}
+<figure class="s18-gif">
+  <img class="gif-restart" src="images/src/s18-chairlift.gif" alt="A small dog riding a chairlift on its own, high above pine trees and mountains">
+  <figcaption>me on CNG</figcaption>
+</figure>
+```
+
 ::: notes
 Leaving Earth Engine paid off well beyond the bill. Any given job now takes about half the time on the same compute, we've load tested up to sixty-four concurrent jobs, up from four, and we're far more stable under load.
 :::

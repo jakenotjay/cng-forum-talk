@@ -281,3 +281,41 @@
   else boot();
 })();
 </script>
+
+<script>
+// GIFs marked .gif-restart play from their first frame each time their slide
+// becomes current. A browser only restarts a GIF when it gets a new URL, so the
+// file is fetched once and handed back as a fresh blob URL on every visit.
+(function () {
+  'use strict';
+
+  function init() {
+    var imgs = Array.prototype.slice.call(document.querySelectorAll('.reveal img.gif-restart'));
+    imgs.forEach(function (img) {
+      fetch(img.getAttribute('src'))
+        .then(function (r) { return r.blob(); })
+        .then(function (blob) { img._gifBlob = blob; })
+        .catch(function () {});  // keep the plain src; it just won't restart
+    });
+
+    function show(current) {
+      imgs.forEach(function (img) {
+        if (!img._gifBlob || !current || !current.contains(img)) return;
+        if (img._gifUrl) URL.revokeObjectURL(img._gifUrl);
+        img._gifUrl = URL.createObjectURL(img._gifBlob);
+        img.src = img._gifUrl;
+      });
+    }
+
+    Reveal.on('slidechanged', function (e) { show(e.currentSlide); });
+  }
+
+  function boot() {
+    if (Reveal.isReady()) init();
+    else Reveal.on('ready', init);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+</script>
