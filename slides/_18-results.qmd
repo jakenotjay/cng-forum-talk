@@ -1,4 +1,4 @@
-## What we gained {#slide-17}
+## What we gained {#slide-20}
 
 ::: {.s18-grid}
 ::: {.stat .s18-tile .a-rise style="--d:1s"}

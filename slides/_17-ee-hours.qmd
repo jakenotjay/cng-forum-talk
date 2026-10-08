@@ -1,4 +1,4 @@
-## Earth Engine spend, month by month {#slide-16}
+## Earth Engine spend, month by month {#slide-19}
 
 ::: {.s17-wrap}
 {{< include slides/_gen/s17-chart.qmd >}}

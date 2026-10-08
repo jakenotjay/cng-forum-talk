@@ -101,6 +101,12 @@ title-slide-attributes:
 
 {{< include slides/_14-protocol.qmd >}}
 
+{{< include slides/_21-ai-metaskill.qmd >}}
+
+{{< include slides/_22-ai-oneshot.qmd >}}
+
+{{< include slides/_23-ai-verify.qmd >}}
+
 {{< include slides/_15-wont-play.qmd >}}
 
 {{< include slides/_16-open-data.qmd >}}
@@ -108,11 +114,5 @@ title-slide-attributes:
 {{< include slides/_17-ee-hours.qmd >}}
 
 {{< include slides/_18-results.qmd >}}
-
-{{< include slides/_21-ai-metaskill.qmd >}}
-
-{{< include slides/_22-ai-oneshot.qmd >}}
-
-{{< include slides/_23-ai-verify.qmd >}}
 
 {{< include slides/_20-close.qmd >}}

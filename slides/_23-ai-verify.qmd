@@ -1,4 +1,4 @@
-## Pixel-perfect against Earth Engine {#slide-20}
+## Pixel-perfect against Earth Engine {#slide-16}
 
 ```{=html}
 <div class="s23-wrap">
@@ -35,11 +35,9 @@
     also pixel-exact at source
     <span class="chip good">Hansen</span><span class="chip good">JRC GFC</span><span class="chip good">JRC GFT</span><span class="chip good">GLAD GLCLU</span><span class="chip good">FDP</span>
   </div>
-
-  <div class="s23-take a-rise" style="--d:11.5s">How a team of two moved our deforestation pipeline off Earth Engine</div>
 </div>
 ```
 
 ::: notes
-And the agent checks its own work: the skill has it test each source against the Earth Engine version, and on this tile in Pará not one pixel differs in eight years. That's how two of us moved the deforestation pipeline off Earth Engine.
+And the agent checks its own work: the skill has it test each source against the Earth Engine version, and on this tile in Pará not one pixel differs in eight years.
 :::
